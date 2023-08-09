@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: black;
+  background: $white;
+  overflow-x: hidden;
+}
+
+.section {
+  position: relative;
+  margin: 40px 0;
+}
+
+.wrapper {
+  max-width: 1440px;
+  padding: 0 75px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex; 
+  flex-direction: column;
+}
+
+//
+
+.button {
+  min-width: 140px;
+  text-transform: uppercase;
+  
+  padding: 10px 30px;
+  margin: 7px;
+  font-size: 15px;
+  line-height: normal;
+
+  border-radius: 20px;
+
+  &.light {
+    background-color: $white;
+    border: 3px solid $black;
+  }
+
+  &.dark {
+    background: $black-gradient;
+    border: 3px solid $black-gradient;
+    color: white;
+
+  }
+
+}
+
+//
+
+h2, .h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: normal;
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+}

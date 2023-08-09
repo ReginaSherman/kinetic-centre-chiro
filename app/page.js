@@ -1,113 +1,171 @@
-import Image from 'next/image'
+"use client";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useContext,
+  createContext,
+  forwardRef,
+  useState,
+  useRef,
+} from "react";
+import Image from "next/image";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import TreatmentSlider from "./components/TreatmentSlider";
+
+import "./styles/home.scss";
+import "./styles/TreatmentSlider.module.scss";
+
+import logo from "/public/LOGO.svg";
+import dr from "/public/images/DRPHOTO.png";
+import { Spline_Sans } from "next/font/google";
+
+const splineSans = Spline_Sans({
+  weight: ["400", "600"],
+  preload: false,
+  variable: "--font-spline",
+});
+
+import slideImage1 from "public/images/PHOTO.jpg";
+import slideImage2 from "public/images/PHOTO_1.jpg";
+import slideImage3 from "public/images/PHOTO_2.jpg";
+import slideImage4 from "public/images/PHOTO_3.jpg";
+import slideImage5 from "public/images/PHOTO_4.jpg";
+import slideImage6 from "public/images/PHOTO_5.jpg";
+import slideImage7 from "public/images/PHOTO_6.jpg";
+import slideImage8 from "public/images/PHOTO_7.jpg";
+import slideImage9 from "public/images/PHOTO_8.jpg";
+import slideImage10 from "public/images/PHOTO_9.jpg";
+import slideImage11 from "public/images/PHOTO_10.jpg";
+
+const images = [
+  {
+    src: slideImage8,
+    title: "CONSULTATION",
+    description:
+      "Patients who receive myofascial release will experience an increase in range of motion, a decrease in pain, and an increase in fascial mobility.",
+  },
+  {
+    src: slideImage11,
+    title: "k taping",
+    description:
+      "K-Tape is a thin, flexible tape that is meant to relieve pain, reduce swelling and inflammation, and provide support to joints and muscle",
+  },
+  {
+    src: slideImage1,
+    title: "chiropractic adjustment",
+    description:
+      "Chiropractic adjustments restore alignment to bothersome joints in the spine or extremities.",
+  },
+  {
+    src: slideImage2,
+    title: "3D MOVEMENT SCREENING",
+    description:
+      "We utilize 3D movement screening to baseline and measure progress in your body.",
+  },
+  {
+    src: slideImage3,
+    title: "functional rehab",
+    description:
+      "Functional rehab is intended to strengthen your movement patterns and improve functionality",
+  },
+  {
+    src: slideImage4,
+    title: "GOLF SWING ANALYSIS",
+    description:
+      "Image 2 DescriptionUsing our 3D technology we will identify tissue, joint restrictions, and instabilities that are affecting your swing.",
+  },
+  {
+    src: slideImage5,
+    title: "3D bARBELL ANALYSIS",
+    description:
+      "The 3D Barbell allows us to break down back squats, deadlifts, and many other lifts that you perform in the gym",
+  },
+  {
+    src: slideImage6,
+    title: "SPORTS MASSAGE",
+    description:
+      "Sports massage enhances athletic performance & aids in the recovery of muscles by targeting areas of tension & promoting blood circulation.",
+  },
+  {
+    src: slideImage7,
+    title: "LASER THERAPY",
+    description:
+      "Laser therapy uses focused light energy to promote tissue healing, reduce inflammation, and alleviate pain.",
+  },
+  {
+    src: slideImage9,
+    title: "Image 2 Title",
+    description: "Image 2 Description",
+  },
+  {
+    src: slideImage10,
+    title: "Image 2 Title",
+    description: "Image 2 Description",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div>
+      <Header />
+      <main className="homepage">
+        <div className="homepage-hero">
+          <div className="logo-container">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              className="hero-logo"
+              src={logo}
+              width={705}
+              height={205}
+              alt="alt"
             />
-          </a>
+          </div>
+          <div className="hero-text">
+            <div className="left-side">
+              <h2 className="h2 uppercase">
+                HELPING YOU STAY ACTIVE AND PAIN FREE
+              </h2>
+              <p className={`description + ${splineSans.className}`}>
+                The Kinetic Centre USA is a multidisciplinary facility that
+                provides advanced assessment, treatment and rehab. Kinetic
+                Centre Practitioners help you feel and move better using
+                objective biomechanical data.
+              </p>
+              <p className={`superscript + ${splineSans.className}`}>
+                Have questions?{" "}
+                <span className="green">Call us at 469-697-9545</span>
+              </p>
+              <button className="button dark">Book an Appointment</button>
+            </div>
+            <div className="right-side">
+              <Image
+                className="dr-photo"
+                src={dr}
+                width={800}
+                height={653}
+                alt="alt"
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <section className="section">
+          <div className="wrapper">
+            <div className="text-container">
+              <h2 className="h2 uppercase">Treatments & Services</h2>
+              <p className={`description + ${splineSans.className}`}>
+                The clinic is powered by Kinetisense, the 3D functional movement
+                analysis technology. Our goal is to provide you the same level
+                of treatment, rehab, technology, assessment and advanced
+                techniques that professional athletes use at an affordable
+                price.
+              </p>
+            </div>
+            <TreatmentSlider images={images} autoplay={false} interval={5000} />
+          </div>
+        </section>
+      </main>
+      {/* <Footer /> */}
+    </div>
+  );
 }

@@ -1,0 +1,73 @@
+.homepage {
+  position: relative;
+  margin-top: 100px;
+
+  &-hero {
+    .logo-container {
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: row;
+      padding: 60px 0px 60px 75px;
+
+      .left-side {
+        flex: 0 1 50%;
+
+        .description {
+          font-size: 20px;
+          font-weight: 400;
+          margin-top: 6px;
+          margin-bottom: 32px;
+        }
+
+        .superscript {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 20px;
+          .green {
+            color: $green;
+          }
+        }
+        .button.dark {
+          border-radius: 17.3px;
+        }
+      }
+
+      .right-side {
+        flex: 0 0 auto;
+
+        .dr-photo {
+          position: absolute;
+          top: -50px;
+          right: 0;
+        }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100vw;
+          height: 500px;
+          background-color: $gray;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 180px;
+    margin-bottom: 50px;
+
+    .description {
+        font-weight: 400;
+        padding: 0 60px;
+    }
+  }
+}
