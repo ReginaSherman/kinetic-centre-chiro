@@ -73,7 +73,10 @@ const TreatmentSlider = ({ images, autoplay = false, interval = 3000 }) => {
   };
 
   const sliderStyle = {
-    transform: `translateX(-${currentIndex * (100 / images.length)}%)`,
+    transform: `translateX(-${
+      (currentIndex % Math.ceil(images.length / 4)) *
+      (100 / Math.ceil(images.length / 4))
+    }%)`,
   };
 
   return (
@@ -119,7 +122,13 @@ const TreatmentSlider = ({ images, autoplay = false, interval = 3000 }) => {
                     className={`${styles["fade-description"]} + ${splineSans.className}`}
                   >
                     {image.description}
-                    <a href='https://kineticcentredallas.janeapp.com/' target='_blank' className="button dark">Book Now</a>
+                    <a
+                      href="https://kineticcentredallas.janeapp.com/"
+                      target="_blank"
+                      className="button dark"
+                    >
+                      Book Now
+                    </a>
                   </p>
                 </div>
               </div>

@@ -37,7 +37,7 @@ body {
 }
 
 .flex-col {
-  display: flex; 
+  display: flex;
   flex-direction: column;
 }
 
@@ -46,7 +46,7 @@ body {
 .button {
   min-width: 140px;
   text-transform: uppercase;
-  
+
   padding: 10px 30px;
   margin: 7px;
   font-size: 15px;
@@ -57,6 +57,12 @@ body {
   &.light {
     background-color: $white;
     border: 3px solid $black;
+
+    &:hover {
+      color: $white;
+      background: $green-gradient;
+      border: 3px solid $green-gradient;
+    }
   }
 
   &.dark {
@@ -64,13 +70,17 @@ body {
     border: 3px solid $black-gradient;
     color: white;
 
+    &:hover {
+      background: $green-gradient;
+      border: 3px solid $green-gradient;
+    }
   }
-
 }
 
 //
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 40px;
   font-weight: 700;
   line-height: normal;

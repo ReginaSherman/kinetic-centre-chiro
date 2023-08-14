@@ -1,9 +1,18 @@
 // colors
 
 $black: #111311;
-$white: #FFF;
-$green: #23A44C;
-$gray: #F8F8F8;
-$dark-gray: #D7D7D7;
+$white: #fff;
+$green: #23a44c;
+$gray: #f8f8f8;
+$dark-gray: #d7d7d7;
 
-$black-gradient: linear-gradient(180deg, rgba(17, 19, 17, 0.85) 0%, #111311 100%);
+$black-gradient: linear-gradient(
+  180deg,
+  rgba(17, 19, 17, 0.85) 0%,
+  #111311 100%
+);
+$green-gradient: linear-gradient(
+  141deg,
+  rgb(77, 180, 110) 0%,
+  rgb(23, 136, 59) 97.62%
+);

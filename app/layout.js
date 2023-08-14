@@ -3,7 +3,7 @@ import './styles/globals.scss'
 import { Roboto, Spline_Sans } from 'next/font/google'
 
 
-const roboto = Roboto({ weight: '700', preload: false })
+const roboto = Roboto({ weight: ['400' ,'700'], preload: false })
 
 
 export const metadata = {

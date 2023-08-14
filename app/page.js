@@ -12,6 +12,8 @@ import Image from "next/image";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TreatmentSlider from "./components/TreatmentSlider";
+import TestimonialSlider from "./components/TestimonialSlider";
+import Map from "./components/Map";
 
 import "./styles/home.scss";
 import "./styles/TreatmentSlider.module.scss";
@@ -37,6 +39,9 @@ import slideImage8 from "public/images/PHOTO_7.jpg";
 import slideImage9 from "public/images/PHOTO_8.jpg";
 import slideImage10 from "public/images/PHOTO_9.jpg";
 import slideImage11 from "public/images/PHOTO_10.jpg";
+
+import calIcon from "public/calIcon.svg";
+import mapIcon from "public/mapIcon.svg";
 
 const images = [
   {
@@ -105,6 +110,34 @@ const images = [
   },
 ];
 
+const testimonials = [
+  {
+    text: "“The Kinetic Centre isn't just your everyday chiropractic experience - their approach to everyone's unique situation is fantastic...”",
+    date: "october 2022",
+  },
+  {
+    text: "“After a year of being injured and losing hope in living without hip pain, I feel real improvements for the first time, and have even increased in strength...”",
+    date: "MARCH 2022",
+  },
+  {
+    text: "“Dr. Brennan has help me improve my fitness and my body in many different ways, from analyzing my running form, helpful advice,  rehab movements and much more.”",
+    date: "February 2023",
+  },
+  {
+    text: "“The Kinetic Centre isn't just your everyday chiropractic experience - their approach to everyone's unique situation is fantastic...”",
+    date: "october 2022",
+  },
+  {
+    text: "“After a year of being injured and losing hope in living without hip pain, I feel real improvements for the first time, and have even increased in strength...”",
+    date: "MARCH 2022",
+  },
+  {
+    text: "“Dr. Brennan has help me improve my fitness and my body in many different ways, from analyzing my running form, helpful advice,  rehab movements and much more.”",
+    date: "February 2023",
+  },
+  // Add more testimonials here
+];
+
 export default function Home() {
   return (
     <div>
@@ -163,6 +196,78 @@ export default function Home() {
             </div>
             <TreatmentSlider images={images} autoplay={false} interval={5000} />
           </div>
+        </section>
+
+        <section className="section praise-ribbon">
+          <div className="wrapper">
+            <div className="praise-items">
+              <div className="item item1">
+                <p className="bold">200+</p>
+                <p>5 star reviews</p>
+              </div>
+              <div className="item item2">
+                <p className="bold">Rapid</p>
+                <p>Recovery</p>
+              </div>
+              <div className="item item3">
+                <p className="bold">#1 DFW</p>
+                <p>Sports Clinic</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section testimonials">
+          <div className="wrapper">
+            <h2 className="h2 uppercase">
+              HIGHEST RATED SPORTS CLINIC IN THE USA
+            </h2>
+
+            <TestimonialSlider testimonials={testimonials} interval={5000} />
+          </div>
+        </section>
+
+        <section className="section map">
+          <div className="locations">
+            <div className="dallas location">
+              <h2 className="uppercase">dALLAS lOCATION</h2>
+              <p className={`address + ${splineSans.className}`}>
+                17740 Preston Rd <br />
+                Suite 150 <br />
+                Dallas, TX 75252 <br />
+                (469) 697-9545 <br />
+              </p>
+              <div className="cta-block">
+                <a className="button dark">
+                  <Image className='icon' src={calIcon} alt="cal" /> Schedule Appointment
+                </a>
+                <a className="button dark">
+                  <Image className='icon' src={mapIcon} alt="map" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
+            <div className="frisco location">
+              <h2 className="uppercase">FRISCO LOCATION</h2>
+              <p className={`address + ${splineSans.className}`}>
+                6155 Sports Village Rd <br />
+                Suite 500 <br />
+                Frisco, TX 75033 <br />
+                (214) 618-0324 <br />
+              </p>
+              <div className="cta-block">
+                <a className="button dark">
+                  <Image className='icon' src={calIcon} alt="cal" />
+                  Schedule Appointment
+                </a>
+                <a className="button dark">
+                  <Image className='icon' src={mapIcon} alt="map" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+          <Map />
         </section>
       </main>
       {/* <Footer /> */}
