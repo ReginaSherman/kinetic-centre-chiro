@@ -34,7 +34,7 @@ export default function Header() {
         link.classList.add("active");
       }
     });
-  }, [pathname]);
+  }, []);
 
   return (
     <header id="header" className="header">
