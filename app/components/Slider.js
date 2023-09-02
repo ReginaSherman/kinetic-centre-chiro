@@ -1,19 +1,26 @@
 import { useRef, useEffect, useState } from "react";
 import { register } from "swiper/element/bundle";
-import "../styles/TestimonialSlider.scss";
+import "../styles/TreatmentSlider.scss";
 
 import Image from "next/image";
 
 register();
 
-export default function TestimonialSlider({ testimonials }) {
+export default function Slider({ images }) {
   const swiperElRef = useRef(null);
-  const [slidesPerView, setSlidesPerView] = useState(2);
+
+  const [slidesPerView, setSlidesPerView] = useState(4);
 
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {
         setSlidesPerView(1); // Adjust this value based on your desired behavior
+      } else if (window.innerWidth < 1024) {
+        setSlidesPerView(2);
+      } else if (window.innerWidth < 1350) {
+        setSlidesPerView(3);
+      } else if (window.innerWidth > 1350) {
+        setSlidesPerView(4);
       }
     }
 
@@ -38,19 +45,33 @@ export default function TestimonialSlider({ testimonials }) {
   }, []);
 
   return (
-    <div className="testimonial-slider">
+    <div className="treatment-slider">
       <swiper-container
         className="slide-container"
         ref={swiperElRef}
         slides-per-view={slidesPerView}
         navigation="true"
         pagination="true"
+        loop="true"
       >
-        {testimonials.map((testimonial, index) => (
+        {images.map((image, index) => (
+          // eslint-disable-next-line react/jsx-key
           <swiper-slide key={index} className="image-wrapper">
-            <div className="testimonial-text">
-              <p>{testimonial.text}</p>
-              <p className="testimonial-date">{testimonial.date}</p>
+            <Image className="slide-img" src={image.src} alt="alt" />
+            <div className="overlay">
+              <div className="overlay-content">
+                <div className="overlay-text">
+                  <h2>{image.title}</h2>
+                  <p className="fade-description">{image.description}</p>
+                </div>
+                <a
+                  href="https://kineticcentredallas.janeapp.com/"
+                  target="_blank"
+                  className="button dark"
+                >
+                  Book Now
+                </a>
+              </div>
             </div>
           </swiper-slide>
         ))}

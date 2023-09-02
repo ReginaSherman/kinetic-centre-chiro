@@ -1,45 +1,48 @@
 .header {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100px;
-    z-index: 999;
-    background-color: $white;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  z-index: 999;
+  background-color: $white;
 
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
 
-    .wrapper {
-        display: flex;
-        justify-content: space-between;
+    height: 100%;
 
-        height: 100%; 
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%;
+      .list-item {
+        padding: 0 35px;
 
+        a.nav-link {
+          text-transform: uppercase;
+          cursor: pointer;
+          padding-bottom: 15px;
+          border-bottom: 0px solid $green;
+          transition: border-bottom 0.2s ease-in-out;
 
-        .navbar {
-            display: flex; 
-            flex-direction: row;
-            align-items: center;
-            height: 100%;
-            .list-item {
-                padding: 0 35px;
+          &.active,
+          &:hover {
+            border-bottom: 4px solid $green;
+          }
 
-                a.nav-link {
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    padding-bottom: 15px;
-
-                    &:hover {
-                        border-bottom: 4px solid $green;
-                    }
-                }
-            }
+          &.active {
+            font-weight: 600;
+          }
         }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
+      }
     }
 
+    .buttons-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
 }

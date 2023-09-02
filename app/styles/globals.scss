@@ -28,6 +28,7 @@ body {
 }
 
 .wrapper {
+  margin: 0 auto;
   max-width: 1440px;
   padding: 0 75px;
 }
@@ -43,7 +44,11 @@ body {
 
 //
 
+a.button,
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 140px;
   text-transform: uppercase;
 
@@ -55,24 +60,24 @@ body {
   border-radius: 20px;
 
   &.light {
-    background-color: $white;
+    background: $white;
     border: 3px solid $black;
 
     &:hover {
       color: $white;
       background: $green-gradient;
-      border: 3px solid $green-gradient;
+      border: 3px solid $green;
     }
   }
 
   &.dark {
     background: $black-gradient;
-    border: 3px solid $black-gradient;
+    border: 3px solid $black;
     color: white;
 
     &:hover {
       background: $green-gradient;
-      border: 3px solid $green-gradient;
+      border: 3px solid $green;
     }
   }
 }
@@ -84,8 +89,84 @@ h2,
   font-size: 40px;
   font-weight: 700;
   line-height: normal;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+h3,
+.h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: normal;
+}
+.super-header {
+  font-size: 18px;
+  font-weight: 400;
+  color: $green;
+}
 
-  &.uppercase {
-    text-transform: uppercase;
+// Global Components
+.bottom-banner {
+  .cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 0;
+    margin: 0 auto;
+  }
+}
+
+.socials-container {
+  display: flex;
+
+  a {
+    margin: 10px;
+    cursor: pointer;
+
+    &:hover {
+      &:first-of-type {
+        svg {
+          path {
+            fill: $green;
+          }
+        }
+      }
+      svg {
+        path {
+          &:first-of-type {
+            fill: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+.praise-ribbon {
+  background-color: $gray;
+  width: 100vw;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .praise-items {
+    display: flex;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      text-transform: uppercase;
+      flex: 0 1 auto;
+      padding: 50px;
+      margin: 0 45px;
+
+      .bold {
+        font-weight: 700;
+      }
+    }
   }
 }

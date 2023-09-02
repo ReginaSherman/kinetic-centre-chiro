@@ -14,9 +14,11 @@ import Footer from "./components/Footer";
 import TreatmentSlider from "./components/TreatmentSlider";
 import TestimonialSlider from "./components/TestimonialSlider";
 import Map from "./components/Map";
+import BottomBanner from "./components/BottomBanner";
 
 import "./styles/home.scss";
-import "./styles/TreatmentSlider.module.scss";
+import "./styles/globals.scss";
+// import "./styles/TreatmentSlider.module.scss";
 
 import logo from "/public/LOGO.svg";
 import dr from "/public/images/DRPHOTO.png";
@@ -42,6 +44,8 @@ import slideImage11 from "public/images/PHOTO_10.jpg";
 
 import calIcon from "public/calIcon.svg";
 import mapIcon from "public/mapIcon.svg";
+import Carousel from "./components/Carousel";
+import Slider from "./components/Slider";
 
 const images = [
   {
@@ -144,40 +148,51 @@ export default function Home() {
       <Header />
       <main className="homepage">
         <div className="homepage-hero">
-          <div className="logo-container">
-            <Image
-              className="hero-logo"
-              src={logo}
-              width={705}
-              height={205}
-              alt="alt"
-            />
-          </div>
-          <div className="hero-text">
-            <div className="left-side">
-              <h2 className="h2 uppercase">
-                HELPING YOU STAY ACTIVE AND PAIN FREE
-              </h2>
-              <p className={`description + ${splineSans.className}`}>
-                The Kinetic Centre USA is a multidisciplinary facility that
-                provides advanced assessment, treatment and rehab. Kinetic
-                Centre Practitioners help you feel and move better using
-                objective biomechanical data.
-              </p>
-              <p className={`superscript + ${splineSans.className}`}>
-                Have questions?{" "}
-                <span className="green">Call us at 469-697-9545</span>
-              </p>
-              <button className="button dark">Book an Appointment</button>
-            </div>
-            <div className="right-side">
+          <div className="wrapper">
+            <div className="logo-container">
               <Image
-                className="dr-photo"
-                src={dr}
-                width={800}
-                height={653}
+                className="hero-logo"
+                src={logo}
+                width={705}
+                height={205}
                 alt="alt"
               />
+            </div>
+            <div className="hero-text">
+              <div className="left-side">
+                <div className="left-border">
+                  <h2 className="h2 uppercase">
+                    HELPING YOU STAY ACTIVE AND PAIN FREE
+                  </h2>
+                  <p className={`description + ${splineSans.className}`}>
+                    The Kinetic Centre USA is a multidisciplinary facility that
+                    provides advanced assessment, treatment and rehab. Kinetic
+                    Centre Practitioners help you feel and move better using
+                    objective biomechanical data.
+                  </p>
+                </div>
+
+                <p className={`superscript + ${splineSans.className}`}>
+                  Have questions?{" "}
+                  <span className="green">Call us at 469-697-9545</span>
+                </p>
+                <a
+                  href="https://kineticcentredallas.janeapp.com/"
+                  target="_blank"
+                  className="button dark"
+                >
+                  Book an Appointment
+                </a>
+              </div>
+              <div className="right-side">
+                <Image
+                  className="dr-photo"
+                  src={dr}
+                  width={800}
+                  height={"auto"}
+                  alt="alt"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -194,8 +209,8 @@ export default function Home() {
                 price.
               </p>
             </div>
-            <TreatmentSlider images={images} autoplay={false} interval={5000} />
           </div>
+          <Slider images={images} />
         </section>
 
         <section className="section praise-ribbon">
@@ -222,46 +237,67 @@ export default function Home() {
             <h2 className="h2 uppercase">
               HIGHEST RATED SPORTS CLINIC IN THE USA
             </h2>
-
-            <TestimonialSlider testimonials={testimonials} interval={5000} />
           </div>
+          <TestimonialSlider testimonials={testimonials} interval={5000} />
         </section>
 
         <section className="section map">
           <div className="locations">
             <div className="dallas location">
-              <h2 className="uppercase">dALLAS lOCATION</h2>
-              <p className={`address + ${splineSans.className}`}>
-                17740 Preston Rd <br />
-                Suite 150 <br />
-                Dallas, TX 75252 <br />
-                (469) 697-9545 <br />
-              </p>
+              <div className="location-text">
+                <h2 className="uppercase">dALLAS lOCATION</h2>
+                <p className={`address + ${splineSans.className}`}>
+                  17740 Preston Rd <br />
+                  Suite 150 <br />
+                  Dallas, TX 75252 <br />
+                  (469) 697-9545 <br />
+                </p>
+              </div>
               <div className="cta-block">
-                <a className="button dark">
-                  <Image className='icon' src={calIcon} alt="cal" /> Schedule Appointment
+                <a
+                  href="https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book"
+                  target="_blank"
+                  className="button dark"
+                >
+                  <Image className="icon" src={calIcon} alt="cal" /> Schedule
+                  Appointment
                 </a>
-                <a className="button dark">
-                  <Image className='icon' src={mapIcon} alt="map" />
+                <a
+                  href="https://maps.google.com/?saddr=My%20Location&daddr=Kinetic+Centre+Dallas+17740+Preston+Rd+Suite+150+Dallas+TX+75252"
+                  target="_blank"
+                  className="button dark"
+                >
+                  <Image className="icon" src={mapIcon} alt="map" />
                   Get Directions
                 </a>
               </div>
             </div>
             <div className="frisco location">
-              <h2 className="uppercase">FRISCO LOCATION</h2>
-              <p className={`address + ${splineSans.className}`}>
-                6155 Sports Village Rd <br />
-                Suite 500 <br />
-                Frisco, TX 75033 <br />
-                (214) 618-0324 <br />
-              </p>
+              <div className="location-text">
+                <h2 className="uppercase">FRISCO LOCATION</h2>
+                <p className={`address + ${splineSans.className}`}>
+                  6155 Sports Village Rd <br />
+                  Suite 500 <br />
+                  Frisco, TX 75033 <br />
+                  (214) 618-0324 <br />
+                </p>
+              </div>
+
               <div className="cta-block">
-                <a className="button dark">
-                  <Image className='icon' src={calIcon} alt="cal" />
+                <a
+                  href="https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book"
+                  target="_blank"
+                  className="button dark"
+                >
+                  <Image className="icon" src={calIcon} alt="cal" />
                   Schedule Appointment
                 </a>
-                <a className="button dark">
-                  <Image className='icon' src={mapIcon} alt="map" />
+                <a
+                  href="https://maps.google.com/?saddr=My%20Location&daddr=Kinetic+Centre+Frisco+6155+Sports+Village+Rd+Suite+500+Frisco+TX+75033"
+                  target="_blank"
+                  className="button dark"
+                >
+                  <Image className="icon" src={mapIcon} alt="map" />
                   Get Directions
                 </a>
               </div>
@@ -269,6 +305,7 @@ export default function Home() {
           </div>
           <Map />
         </section>
+        <BottomBanner />
       </main>
       {/* <Footer /> */}
     </div>

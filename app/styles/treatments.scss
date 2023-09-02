@@ -1,0 +1,113 @@
+.treatment {
+  position: relative;
+  &-hero {
+    .hero-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 0 1 70%;
+
+        .left-border {
+          position: relative;
+          margin-bottom: 32px;
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background-color: $green;
+            left: -40px;
+            top: 0;
+          }
+        }
+
+        .description {
+          font-size: 20px;
+          font-weight: 400;
+          margin-top: 6px;
+        }
+
+        .superscript {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 20px;
+          .green {
+            color: $green;
+          }
+        }
+        .button.dark {
+          border-radius: 17.3px;
+        }
+      }
+
+      .right-side {
+        flex: 0 0 auto;
+
+        .treatment-photo {
+          position: relative;
+          top: -40px;
+          z-index: 2;
+          //   right: 0;
+        }
+
+        .deco {
+          //   &::before {
+          //     content: "";
+          //     display: block;
+          //     position: absolute;
+          //     width: 328px;
+          //     height: 450px;
+          //     background-color: $gray;
+          //     top: 215px;
+          //     right: 0;
+          //     z-index: 2;
+          //   }
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-bottom: 457px solid $white;
+            border-left: 300px solid transparent;
+            border-right: 0px solid transparent;
+            width: 0;
+            height: 0;
+            // background-color: $white;
+            top: 215px;
+            right: 0;
+            z-index: 1;
+          }
+        }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100vw;
+          height: 450px;
+          background-color: $gray;
+          top: 215px;
+          left: 0;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .bottom-banner {
+    background-color: $gray;
+
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 75px 0;
+      margin: 0 auto;
+    }
+  }
+}

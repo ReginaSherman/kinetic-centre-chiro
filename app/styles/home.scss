@@ -1,7 +1,6 @@
+@import "mixins";
 .homepage {
   position: relative;
-  margin-top: 100px;
-
   &-hero {
     .logo-container {
     }
@@ -12,8 +11,25 @@
       padding: 60px 0px 60px 75px;
 
       .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         flex: 0 1 50%;
 
+        .left-border {
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background-color: $green;
+            left: -40px;
+            top: 0;
+          }
+        }
         .description {
           font-size: 20px;
           font-weight: 400;
@@ -39,7 +55,7 @@
 
         .dr-photo {
           position: absolute;
-          top: -50px;
+          top: -40px;
           right: 0;
         }
         &::after {
@@ -47,9 +63,9 @@
           display: block;
           position: absolute;
           width: 100vw;
-          height: 500px;
+          height: 450px;
           background-color: $gray;
-          top: 154px;
+          top: 215px;
           left: 0;
           z-index: -1;
         }
@@ -71,30 +87,13 @@
     }
   }
 
-  .praise-ribbon {
-    background-color: $gray;
-    width: 100vw;
-
+  .testimonials {
     .wrapper {
       display: flex;
       justify-content: center;
-    }
 
-    .praise-items {
-      display: flex;
-
-      .item {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        text-transform: uppercase;
-        flex: 0 1 auto;
-        padding: 50px;
-        margin: 0 45px;
-
-        .bold {
-          font-weight: 700;
-        }
+      h2 {
+        padding: 30px 0;
       }
     }
   }
@@ -109,10 +108,10 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-
       padding: 48px 0 48px 68px;
 
-      width: 100%;
+      width: 50%;
+      max-width: 800px;
       height: 100%;
 
       z-index: 2;
@@ -120,33 +119,48 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 50%;
+        width: 100%;
         background: rgba(35, 164, 76, 0.8);
-        padding: 32px 0 43px 61px;
+        padding: 32px;
+        &:first-of-type {
+          margin-bottom: 10px;
+        }
+        &:last-of-type {
+          margin-top: 10px;
+        }
 
         h2 {
-            color: $white;
-            padding-bottom: 8px;
+          color: $white;
+          padding-bottom: 8px;
         }
-
+        @include devices(tablet-lg) {
+          flex-direction: row;
+          gap: 20px;
+        }
         p {
-            font-size: 22px;
-            font-weight: 500;
-            text-transform: uppercase;
-            padding-bottom: 30px;
+          font-size: 22px;
+          font-weight: 500;
+          text-transform: uppercase;
+          padding-bottom: 30px;
         }
         .cta-block {
-            display: flex;
-        }
-        .button {
-            font-size: 20px;
-            width: 255px;
-            display: flex;
-            min-width: unset;
+          display: flex;
+          flex-wrap: nowrap;
 
-            .icon {
-                padding-right: 16px;
-            }
+          @include devices(tablet-lg) {
+            flex-direction: column;
+          }
+        }
+
+        .button {
+          font-size: 20px;
+          flex: 0 1 50%;
+          display: flex;
+          align-items: center;
+
+          .icon {
+            padding-right: 16px;
+          }
         }
       }
     }

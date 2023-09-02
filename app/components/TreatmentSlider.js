@@ -1,148 +1,157 @@
-import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import styles from "../styles/TreatmentSlider.module.scss";
-import { Spline_Sans } from "next/font/google";
+// import React, { useState, useEffect, useRef } from "react";
+// import Image from "next/image";
+// import styles from "../styles/TreatmentSlider.module.scss";
+// import { Spline_Sans } from "next/font/google";
 
-const splineSans = Spline_Sans({
-  weight: ["400"],
-  preload: false,
-  variable: "--font-spline",
-});
+// const splineSans = Spline_Sans({
+//   weight: ["400"],
+//   preload: false,
+//   variable: "--font-spline",
+// });
 
-const TreatmentSlider = ({ images, autoplay = false, interval = 3000 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const sliderRef = useRef(null);
+// const TreatmentSlider = ({ images, autoplay = false, interval = 3000 }) => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [isDragging, setIsDragging] = useState(false);
+//   const [startX, setStartX] = useState(0);
+//   const [imagesPerPage, setImagesPerPage] = useState(4);
+//   const sliderRef = useRef(null);
 
-  useEffect(() => {
-    let timer;
+//   useEffect(() => {
+//     let timer;
 
-    if (autoplay) {
-      timer = setInterval(() => {
-        goToNextSlide();
-      }, interval);
-    }
+//     if (autoplay) {
+//       timer = setInterval(() => {
+//         goToNextPage();
+//       }, interval);
+//     }
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [currentIndex, autoplay, interval]);
+//     return () => {
+//       clearInterval(timer);
+//     };
+//   }, [currentIndex, autoplay, interval]);
 
-  const goToNextSlide = () => {
-    const nextIndex = (currentIndex + 4) % images.length;
-    setCurrentIndex(nextIndex);
-  };
+//   // const updateImagesPerPage = () => {
+//   //   const screenWidth = window.innerWidth;
+//   //   if (screenWidth >= 768) {
+//   //     setImagesPerPage(4); // Show 4 images per page on larger screens
+//   //   } else {
+//   //     setImagesPerPage(1); // Show 1 image per page on smaller screens
+//   //   }
+//   // };
 
-  const goToPrevSlide = () => {
-    const prevIndex = (currentIndex - 4 + images.length) % images.length;
-    setCurrentIndex(prevIndex);
-  };
+//   // useEffect(() => {
+//   //   updateImagesPerPage();
+//   //   window.addEventListener("resize", updateImagesPerPage);
 
-  const handleDragStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX || e.touches[0].clientX);
-  };
+//   //   return () => {
+//   //     window.removeEventListener("resize", updateImagesPerPage);
+//   //   };
+//   // }, []);
 
-  const handleDragEnd = (e) => {
-    if (isDragging) {
-      const diff = startX - (e.clientX || e.changedTouches[0].clientX);
+//   const goToNextPage = () => {
+//     const nextPage = currentIndex + imagesPerPage;
+//     setCurrentIndex(nextPage >= images.length ? 0 : nextPage);
+//   };
 
-      if (diff > 50) {
-        goToNextSlide();
-      } else if (diff < -50) {
-        goToPrevSlide();
-      }
+//   const goToPrevPage = () => {
+//     const prevPage = currentIndex - imagesPerPage;
+//     setCurrentIndex(prevPage < 0 ? images.length - imagesPerPage : prevPage);
+//   };
 
-      setIsDragging(false);
-    }
-  };
+//   const handleDragStart = (e) => {
+//     setIsDragging(true);
+//     setStartX(e.clientX || e.touches[0].clientX);
+//   };
 
-  const handleDragCancel = () => {
-    setIsDragging(false);
-  };
+//   const handleDragEnd = (e) => {
+//     if (isDragging) {
+//       const diff = startX - (e.clientX || e.changedTouches[0].clientX);
 
-  const handleDotClick = (index) => {
-    setCurrentIndex(index * 4);
-  };
+//       if (diff > 50) {
+//         goToNextPage();
+//       } else if (diff < -50) {
+//         goToPrevPage();
+//       }
 
-  const handleTouchMove = (e) => {
-    if (isDragging) {
-      e.preventDefault();
-    }
-  };
+//       setIsDragging(false);
+//     }
+//   };
 
-  const sliderStyle = {
-    transform: `translateX(-${
-      (currentIndex % Math.ceil(images.length / 4)) *
-      (100 / Math.ceil(images.length / 4))
-    }%)`,
-  };
+//   const handleDragCancel = () => {
+//     setIsDragging(false);
+//   };
 
-  return (
-    <div
-      className={styles["treatment-slider"]}
-      onMouseUp={handleDragEnd}
-      onTouchEnd={handleDragEnd}
-      onMouseLeave={handleDragCancel}
-      onTouchCancel={handleDragCancel}
-      onTouchMove={handleTouchMove}
-    >
-      <div className={styles.pagination}>
-        {images.slice(0, Math.ceil(images.length / 4)).map((_, index) => (
-          <div
-            key={index}
-            className={`${styles.dot} ${
-              index === currentIndex / 4 ? styles.active : ""
-            }`}
-            onClick={() => handleDotClick(index)}
-          />
-        ))}
-      </div>
-      <div
-        className={styles["slide-container"]}
-        style={sliderStyle}
-        onMouseDown={handleDragStart}
-        onTouchStart={handleDragStart}
-        ref={sliderRef}
-      >
-        {images.map((image, index) => (
-          <div key={index} className={styles.slide}>
-            <div className={styles["image-wrapper"]}>
-              <Image
-                src={image.src}
-                alt={`Slide ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
-              />
-              <div className={styles["overlay"]}>
-                <div className={styles["overlay-content"]}>
-                  <h2>{image.title}</h2>
-                  <p
-                    className={`${styles["fade-description"]} + ${splineSans.className}`}
-                  >
-                    {image.description}
-                    <a
-                      href="https://kineticcentredallas.janeapp.com/"
-                      target="_blank"
-                      className="button dark"
-                    >
-                      Book Now
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+//   const handleTouchMove = (e) => {
+//     if (isDragging) {
+//       e.preventDefault();
+//     }
+//   };
 
-      {/* <div className={styles.navigation}>
-        <button onClick={goToPrevSlide}>Previous</button>
-        <button onClick={goToNextSlide}>Next</button>
-      </div> */}
-    </div>
-  );
-};
+//   const sliderStyle = {
+//     transform: `translateX(-${(currentIndex * 100) / images.length}%)`,
+//   };
 
-export default TreatmentSlider;
+//   return (
+//     <div
+//       className={styles["treatment-slider"]}
+//       onMouseUp={handleDragEnd}
+//       onTouchEnd={handleDragEnd}
+//       onMouseLeave={handleDragCancel}
+//       onTouchCancel={handleDragCancel}
+//       onTouchMove={handleTouchMove}
+//     >
+//       <div className={styles.pagination}>
+//         {Array.from({ length: Math.ceil(images.length / imagesPerPage) }).map(
+//           (_, index) => (
+//             <div
+//               key={index}
+//               className={`${styles.dot} ${
+//                 index * imagesPerPage === currentIndex ? styles.active : ""
+//               }`}
+//               onClick={() => setCurrentIndex(index * imagesPerPage)}
+//             />
+//           )
+//         )}
+//       </div>
+//       <div
+//         className={styles["slide-container"]}
+//         style={sliderStyle}
+//         onMouseDown={handleDragStart}
+//         onTouchStart={handleDragStart}
+//         ref={sliderRef}
+//       >
+//         {images.map((image, index) => (
+//           <div key={index} className={styles.slide}>
+//             <div className={styles["image-wrapper"]}>
+//               <Image
+//                 src={image.src}
+//                 alt={`Slide ${index + 1}`}
+//                 layout="fill"
+//                 objectFit="cover"
+//               />
+//               <div className={styles["overlay"]}>
+//                 <div className={styles["overlay-content"]}>
+//                   <h2>{image.title}</h2>
+//                   <p
+//                     className={`${styles["fade-description"]} + ${splineSans.className}`}
+//                   >
+//                     {image.description}
+//                     <a
+//                       href="https://kineticcentredallas.janeapp.com/"
+//                       target="_blank"
+//                       className="button dark"
+//                     >
+//                       Book Now
+//                     </a>
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default TreatmentSlider;

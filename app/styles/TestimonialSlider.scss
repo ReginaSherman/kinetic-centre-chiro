@@ -1,0 +1,70 @@
+.testimonial-slider {
+  margin: 20px;
+
+  swiper-container {
+  }
+
+  swiper-slide {
+    text-align: left;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(17, 19, 17, 0.9) 0%, #111311 100%);
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    max-width: 532px;
+    height: 280px;
+    margin: 0 20px;
+  }
+
+  .testimonial-text {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: white; // Use your color
+    text-transform: uppercase;
+  }
+
+  .testimonial-date {
+    font-size: 25px;
+    color: green; // Use your color
+    text-transform: uppercase;
+  }
+
+  swiper-container::part(container) {
+    padding: 50px 0 !important;
+  }
+
+  swiper-container {
+    &::part(pagination) {
+      position: relative;
+      top: -325px;
+      height: 20px;
+    }
+    &::part(bullet) {
+      width: 19.8113px;
+      height: 7.78302px;
+      margin: 0 5px;
+      background-color: $dark-gray;
+      border-radius: 30%;
+      opacity: 1;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &::part(bullet-active) {
+      width: 19.8113px;
+      height: 7.78302px;
+      margin: 0 5px;
+      border-radius: 30%;
+      background-color: $green;
+      opacity: 1;
+    }
+
+    &::part(button-next),
+    &::part(button-prev) {
+      color: $white;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}
