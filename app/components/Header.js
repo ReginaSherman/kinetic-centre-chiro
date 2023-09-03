@@ -1,8 +1,14 @@
 "use client";
 import "../styles/header.scss";
-import { useEffect } from "react"; // Import useEffect to handle page activation
+import { useEffect, useState } from "react"; // Import useEffect to handle page activation
 
 export default function Header() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   // // Determine the active page based on the current URL
   // const pathname = window.location.pathname;
   // const isHomePage = pathname === "/";
@@ -37,10 +43,15 @@ export default function Header() {
   // }, []);
 
   return (
-    <header id="header" className="header">
+    <header id="header" className={`header ${isMenuOpen ? "open" : ""}`}>
       <div className="wrapper">
         <nav className="navbar">
-          <ul className="flex-row">
+          <div className="menu-toggle" onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+          <ul className={`flex-row ${isMenuOpen ? "open" : ""}`}>
             <li className="list-item">
               <a href="/" className="nav-link">
                 home

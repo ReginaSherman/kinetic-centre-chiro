@@ -14,8 +14,9 @@
 
     .navbar {
       display: flex;
-      flex-direction: row;
       align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
       height: 100%;
       .list-item {
         padding: 0 35px;
@@ -35,6 +36,45 @@
           &.active {
             font-weight: 600;
           }
+        }
+      }
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 3px 0;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      ul.flex-row {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #fff;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+
+        &.open {
+          display: flex;
+        }
+
+        .list-item {
+          margin: 10px 0;
         }
       }
     }

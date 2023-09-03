@@ -1,6 +1,19 @@
+@import "mixins";
+
 .resources {
   &-hero {
     position: relative;
+
+    @include devices(tablet) {
+      background-color: $gray;
+    }
+
+    @include devices(mobile) {
+      background-image: url("../../public/doctors/hero-background.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
     .hero-text {
       display: flex;
       flex-direction: row;
@@ -13,8 +26,19 @@
         flex: 0 1 50%;
         margin-bottom: 50px;
 
+        @include devices(tablet) {
+          margin-bottom: 20px;
+          margin-top: 20px;
+        }
+
+        @include devices(mobile) {
+          flex: 0 1 100%;
+        }
+
         .left-border {
           position: relative;
+          margin-bottom: 32px;
+
           &::after {
             content: "";
             display: block;
@@ -31,7 +55,6 @@
           font-size: 20px;
           font-weight: 400;
           margin-top: 6px;
-          margin-bottom: 32px;
         }
 
         .superscript {
@@ -48,12 +71,17 @@
       }
 
       .right-side {
-        flex: 0 0 auto;
+        flex: 0 1 auto;
 
         .image-container {
           position: relative;
           width: 595px;
           height: 530px;
+
+          @include devices(tablet) {
+            width: 400px;
+            height: auto;
+          }
         }
 
         .dr-photo {
@@ -61,6 +89,10 @@
           height: 100%;
           object-fit: cover;
           max-width: none;
+        }
+
+        @include devices(mobile) {
+          display: none;
         }
       }
     }
@@ -74,6 +106,9 @@
       bottom: 0;
       left: 0;
       z-index: -2;
+      @include devices(tablet) {
+        display: none;
+      }
     }
   }
 
@@ -83,6 +118,11 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
       margin: 0 105px;
+
+      @include devices(mobile) {
+        grid-template-columns: 1fr;
+        margin: 0;
+      }
     }
   }
 
@@ -95,5 +135,9 @@
         padding: 30px 0;
       }
     }
+  }
+
+  .bottom-banner {
+    // background-color: $gray;
   }
 }

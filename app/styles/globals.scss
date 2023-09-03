@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "mixins";
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -31,6 +33,13 @@ body {
   margin: 0 auto;
   max-width: 1440px;
   padding: 0 75px;
+  @include devices(tablet) {
+    padding: 0 50px;
+  }
+
+  @include devices(mobile) {
+    padding: 0 20px;
+  }
 }
 
 .flex-row {
@@ -89,6 +98,10 @@ h2,
   font-size: 40px;
   font-weight: 700;
   line-height: normal;
+
+  @include devices(tablet) {
+    font-size: 30px;
+  }
 }
 .uppercase {
   text-transform: uppercase;
@@ -98,15 +111,23 @@ h3,
   font-size: 30px;
   font-weight: 700;
   line-height: normal;
+  @include devices(tablet) {
+    font-size: 24px;
+  }
 }
 .super-header {
   font-size: 18px;
   font-weight: 400;
   color: $green;
+
+  @include devices(tablet) {
+    font-size: 16;
+  }
 }
 
 // Global Components
 .bottom-banner {
+  margin: 40px 0 0 0;
   .cta-container {
     display: flex;
     flex-direction: column;
@@ -155,6 +176,10 @@ h3,
   .praise-items {
     display: flex;
 
+    @include devices(mobile) {
+      flex-direction: column;
+    }
+
     .item {
       display: flex;
       flex-direction: column;
@@ -163,6 +188,10 @@ h3,
       flex: 0 1 auto;
       padding: 50px;
       margin: 0 45px;
+
+      @include devices(tablet) {
+        padding: 40px 0;
+      }
 
       .bold {
         font-weight: 700;

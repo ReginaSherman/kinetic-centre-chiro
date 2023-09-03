@@ -1,0 +1,65 @@
+.video-slider {
+  text-align: center;
+  margin: 20px;
+
+  swiper-container {
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  #shadow-root {
+    .swiper {
+      padding: 50px 0 !important;
+    }
+  }
+
+  swiper-slide {
+    height: 310px;
+    // width: 530px;
+    margin: 0 10px;
+    // overflow: hidden;
+
+    .slide-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // syling "parts" of the swiper https://swiperjs.com/element#parts
+  swiper-container {
+    &::part(container) {
+      padding: 50px 0 !important;
+    }
+    &::part(pagination) {
+      position: relative;
+      top: -360px;
+      height: 20px;
+    }
+    &::part(bullet) {
+      width: 19.8113px;
+      height: 7.78302px;
+      margin: 0 5px;
+      background-color: $dark-gray;
+      border-radius: 30%;
+      opacity: 1;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    &::part(bullet-active) {
+      width: 19.8113px;
+      height: 7.78302px;
+      margin: 0 5px;
+      border-radius: 30%;
+      background-color: $green;
+      opacity: 1;
+    }
+    &::part(button-next),
+    &::part(button-prev) {
+      color: $white;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+}

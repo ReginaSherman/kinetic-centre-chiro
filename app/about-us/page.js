@@ -237,7 +237,7 @@ export default function About() {
         </section>
         <BottomBanner />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

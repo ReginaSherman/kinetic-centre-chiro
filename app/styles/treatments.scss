@@ -1,6 +1,18 @@
+@import "mixins";
+
 .treatment {
   position: relative;
   &-hero {
+    @include devices(tablet) {
+      background: $gray;
+    }
+
+    @include devices(mobile) {
+      background-image: url("../../public/doctors/hero-background.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
     .hero-text {
       display: flex;
       flex-direction: row;
@@ -12,9 +24,14 @@
         align-items: flex-start;
         flex: 0 1 70%;
 
+        @include devices(mobile) {
+          flex: 0 1 100%;
+        }
+
         .left-border {
           position: relative;
           margin-bottom: 32px;
+
           &::after {
             content: "";
             display: block;
@@ -47,27 +64,16 @@
       }
 
       .right-side {
-        flex: 0 0 auto;
+        flex: 0 1 auto;
 
         .treatment-photo {
           position: relative;
-          top: -40px;
+          // top: -40px;
           z-index: 2;
           //   right: 0;
         }
 
         .deco {
-          //   &::before {
-          //     content: "";
-          //     display: block;
-          //     position: absolute;
-          //     width: 328px;
-          //     height: 450px;
-          //     background-color: $gray;
-          //     top: 215px;
-          //     right: 0;
-          //     z-index: 2;
-          //   }
           &::after {
             content: "";
             display: block;
@@ -81,6 +87,10 @@
             top: 215px;
             right: 0;
             z-index: 1;
+
+            @include devices(tablet) {
+              display: none;
+            }
           }
         }
         &::after {
@@ -93,6 +103,13 @@
           top: 215px;
           left: 0;
           z-index: -1;
+          @include devices(tablet) {
+            display: none;
+          }
+        }
+
+        @include devices(mobile) {
+          display: none;
         }
       }
     }

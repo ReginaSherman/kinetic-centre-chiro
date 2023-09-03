@@ -2,22 +2,35 @@
 .homepage {
   position: relative;
   &-hero {
+    @include devices(tablet) {
+      background-color: $gray;
+    }
     .logo-container {
     }
 
     .hero-text {
+      position: relative;
       display: flex;
       flex-direction: row;
-      padding: 60px 0px 60px 75px;
+      align-items: flex-end;
+      top: -124px;
+      z-index: 1;
+
+      @include devices(tablet) {
+        flex-direction: column;
+        top: 0;
+      }
 
       .left-side {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         flex: 0 1 50%;
+        margin-bottom: 50px;
 
         .left-border {
           position: relative;
+          margin-bottom: 32px;
 
           &::after {
             content: "";
@@ -34,7 +47,6 @@
           font-size: 20px;
           font-weight: 400;
           margin-top: 6px;
-          margin-bottom: 32px;
         }
 
         .superscript {
@@ -49,26 +61,40 @@
           border-radius: 17.3px;
         }
       }
-
       .right-side {
-        flex: 0 0 auto;
+        flex: 0 1 40%;
+
+        .image-container {
+          position: relative;
+          width: 700px;
+          height: 600px;
+        }
 
         .dr-photo {
-          position: absolute;
-          top: -40px;
-          right: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: none;
         }
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 100vw;
-          height: 450px;
-          background-color: $gray;
-          top: 215px;
-          left: 0;
-          z-index: -1;
+
+        @include devices(tablet) {
+          display: none;
         }
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100vw;
+      height: 450px;
+      background-color: $gray;
+      top: 231px;
+      left: 0;
+      z-index: -1;
+
+      @include devices(tablet) {
+        display: none;
       }
     }
   }
@@ -81,9 +107,17 @@
     padding: 0 180px;
     margin-bottom: 50px;
 
+    @include devices(tablet) {
+      padding: 0;
+    }
+
     .description {
       font-weight: 400;
       padding: 0 60px;
+
+      @include devices(mobile) {
+        padding: 0;
+      }
     }
   }
 
@@ -99,8 +133,13 @@
   }
 
   .map {
-    height: 90vh;
+    height: 100vh;
     position: relative;
+    min-height: 850px;
+
+    @include devices(mobile) {
+      height: auto;
+    }
 
     .locations {
       position: absolute;
@@ -115,6 +154,18 @@
       height: 100%;
 
       z-index: 2;
+
+      @include devices(tablet) {
+        width: auto;
+        max-width: 75%;
+      }
+
+      @include devices(mobile) {
+        padding: 48px 10px;
+        position: relative;
+        max-width: unset;
+      }
+
       .location {
         display: flex;
         flex-direction: column;
@@ -137,6 +188,10 @@
           flex-direction: row;
           gap: 20px;
         }
+
+        @include devices(mobile) {
+          flex-direction: column;
+        }
         p {
           font-size: 22px;
           font-weight: 500;
@@ -150,6 +205,7 @@
           @include devices(tablet-lg) {
             flex-direction: column;
           }
+
         }
 
         .button {

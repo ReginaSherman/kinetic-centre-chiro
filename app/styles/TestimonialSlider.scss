@@ -1,3 +1,5 @@
+@import "mixins";
+
 .testimonial-slider {
   margin: 20px;
 
@@ -11,15 +13,23 @@
     box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     max-width: 532px;
-    height: 280px;
+    height: auto;
     margin: 0 20px;
   }
 
   .testimonial-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     font-size: 25px;
     margin-bottom: 10px;
     color: white; // Use your color
     text-transform: uppercase;
+
+    @include devices(tablet) {
+      font-size: 20px;
+    }
   }
 
   .testimonial-date {

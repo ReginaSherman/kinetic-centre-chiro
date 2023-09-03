@@ -185,13 +185,15 @@ export default function Home() {
                 </a>
               </div>
               <div className="right-side">
-                <Image
-                  className="dr-photo"
-                  src={dr}
-                  width={800}
-                  height={"auto"}
-                  alt="alt"
-                />
+                <div className="image-container">
+                  <Image
+                    className="dr-photo"
+                    src={dr}
+                    width={800}
+                    height={"auto"}
+                    alt="alt"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -307,7 +309,7 @@ export default function Home() {
         </section>
         <BottomBanner />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

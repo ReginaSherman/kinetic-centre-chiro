@@ -174,6 +174,7 @@ export default function Doctors() {
 
         <BottomBanner />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { useCallback, useState, useEffect } from "react";
 
 const containerStyle = {
   width: "100vw",
-  height: "90vh",
+  height: "100vh",
 };
 
 const center = {

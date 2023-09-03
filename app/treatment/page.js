@@ -50,13 +50,15 @@ export default function Treatment() {
                 </a>
               </div>
               <div className="right-side">
-                <Image
-                  className="treatment-photo"
-                  src={header}
-                  width={629}
-                  height={"auto"}
-                  alt="alt"
-                />
+                <div className="image-container">
+                  <Image
+                    className="treatment-photo"
+                    src={header}
+                    width={629}
+                    height={"auto"}
+                    alt="alt"
+                  />
+                </div>
                 <div className="deco"></div>
               </div>
             </div>
@@ -87,7 +89,7 @@ export default function Treatment() {
           </div>
         </section>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

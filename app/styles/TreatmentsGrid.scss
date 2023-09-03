@@ -1,16 +1,26 @@
+@import "mixins";
+
 .treatments-grid {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-
+  z-index: 2;
+  gap: 10px;
+  margin-top: 50px;
 }
 .image-wrapper {
   position: relative;
   height: 300px;
   flex: 0 1 20%;
-  margin: 20px 10px;
   overflow: hidden;
+  @include devices(tablet) {
+    flex: 0 1 30%;
+  }
+  @include devices(mobile) {
+    flex: 0 1 100%;
+  }
 
   .slide-img {
     width: 100%;

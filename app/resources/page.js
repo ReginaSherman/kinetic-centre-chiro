@@ -44,6 +44,7 @@ const testimonials = [
 ];
 
 import header from "/public/resources-header.png";
+import VideoSlider from "../components/VideoSlider";
 
 export default function Resources() {
   return (
@@ -137,8 +138,32 @@ export default function Resources() {
             </div>
           </div>
         </section>
+
+        <section className="section video-slider">
+          <div className="wrapper">
+            <VideoSlider />
+          </div>
+        </section>
+
+        <section className="section bottom-banner">
+          <div className="wrapper">
+            <div className="cta-container">
+              <h3 className="uppercase">ENJOY YOUR VISIT?</h3>
+              <p className="description">
+              LEAVE US A REVIEW
+              </p>
+              <a
+                href="https://kineticcentredallas.janeapp.com/"
+                target="_blank"
+                className="button dark"
+              >
+                Leave a review now
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
