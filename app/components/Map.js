@@ -29,7 +29,7 @@ const content = "lorem ipsum";
 export default function Map() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.googleMapsApiKey,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_googleMapsApiKey,
   });
 
   const [map, setMap] = useState(null);

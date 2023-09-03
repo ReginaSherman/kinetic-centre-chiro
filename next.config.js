@@ -1,13 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {};
 
-module.exports = nextConfig
+const dotenv = require("dotenv");
+dotenv.config();
 
-const path = require('path')
-    
-    module.exports = {
-        sassOptions: {
-          includePaths: [path.join(__dirname, 'styles')],
-          prependData: `@import "variables.scss";`
-        }
-    }
+module.exports = nextConfig;
+
+const path = require("path");
+
+module.exports = {
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+    prependData: `@import "variables.scss";`,
+  },
+};
