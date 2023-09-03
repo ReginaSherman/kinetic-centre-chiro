@@ -9,38 +9,37 @@ export default function Header() {
     setMenuOpen(!isMenuOpen);
   };
 
-  // // Determine the active page based on the current URL
-  // const pathname = window.location.pathname;
-  // const isHomePage = pathname === "/";
-  // const isTreatmentPage = pathname === "/treatment";
-  // const isDoctorsPage = pathname === "/doctors";
-  // const isAboutUsPage = pathname === "/about-us";
-  // const isResourcesPage = pathname === "/resources";
+  // Determine the active page based on the current URL within a useEffect
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    const isHomePage = pathname === "/";
+    const isTreatmentPage = pathname === "/treatment";
+    const isDoctorsPage = pathname === "/doctors";
+    const isAboutUsPage = pathname === "/about-us";
+    const isResourcesPage = pathname === "/resources";
 
-  // // Apply the active class based on the active page
-  // useEffect(() => {
-  //   const navLinks = document.querySelectorAll(".nav-link");
-  //   navLinks.forEach((link) => {
-  //     link.classList.remove("active");
-  //     if (isHomePage && link.getAttribute("href") === "/") {
-  //       link.classList.add("active");
-  //     } else if (
-  //       isTreatmentPage &&
-  //       link.getAttribute("href") === "/treatment"
-  //     ) {
-  //       link.classList.add("active");
-  //     } else if (isDoctorsPage && link.getAttribute("href") === "/doctors") {
-  //       link.classList.add("active");
-  //     } else if (isAboutUsPage && link.getAttribute("href") === "/about-us") {
-  //       link.classList.add("active");
-  //     } else if (
-  //       isResourcesPage &&
-  //       link.getAttribute("href") === "/resources"
-  //     ) {
-  //       link.classList.add("active");
-  //     }
-  //   });
-  // }, []);
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (isHomePage && link.getAttribute("href") === "/") {
+        link.classList.add("active");
+      } else if (
+        isTreatmentPage &&
+        link.getAttribute("href") === "/treatment"
+      ) {
+        link.classList.add("active");
+      } else if (isDoctorsPage && link.getAttribute("href") === "/doctors") {
+        link.classList.add("active");
+      } else if (isAboutUsPage && link.getAttribute("href") === "/about-us") {
+        link.classList.add("active");
+      } else if (
+        isResourcesPage &&
+        link.getAttribute("href") === "/resources"
+      ) {
+        link.classList.add("active");
+      }
+    });
+  }, []);
 
   return (
     <header id="header" className={`header ${isMenuOpen ? "open" : ""}`}>
