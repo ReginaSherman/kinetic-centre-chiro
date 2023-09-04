@@ -1,7 +1,10 @@
 "use client";
 import "../styles/header.scss";
 import { useEffect, useState } from "react"; // Import useEffect to handle page activation
+import Image from "next/image";
+import Link from "next/link";
 
+import smallLogo from "/public/kc-logo-small.svg";
 export default function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -39,12 +42,25 @@ export default function Header() {
         link.classList.add("active");
       }
     });
+    const logoContainer = document.querySelector(".logo-container");
+    if (logoContainer) {
+      if (isHomePage) {
+        logoContainer.classList.add("hide");
+      } else {
+        logoContainer.classList.remove("hide");
+      }
+    }
   }, []);
 
   return (
     <header id="header" className={`header ${isMenuOpen ? "open" : ""}`}>
       <div className="wrapper">
         <nav className="navbar">
+          <div className="logo-container">
+            <Link href='/'>
+              <Image src={smallLogo} alt="kinetic centre logo" />
+            </Link>
+          </div>
           <div className="menu-toggle" onClick={toggleMenu}>
             <div className="bar"></div>
             <div className="bar"></div>
@@ -76,20 +92,22 @@ export default function Header() {
                 resources
               </a>
             </li>
+            <li className="list-item">
+              <div className="buttons-container flex-row">
+                <a
+                  href="https://kineticcentredallas.janeapp.com/"
+                  target="_blank"
+                  className="button dark"
+                >
+                  Book Now
+                </a>
+                <a href="/" target="_blank" className="button light">
+                  Sign In
+                </a>
+              </div>
+            </li>
           </ul>
         </nav>
-        <div className="buttons-container flex-row">
-          <a
-            href="https://kineticcentredallas.janeapp.com/"
-            target="_blank"
-            className="button dark"
-          >
-            Book Now
-          </a>
-          <a href="/" target="_blank" className="button light">
-            Sign In
-          </a>
-        </div>
       </div>
     </header>
   );
