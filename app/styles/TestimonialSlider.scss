@@ -70,9 +70,12 @@
 
     &::part(button-next),
     &::part(button-prev) {
+      background-color: $green;
       color: $white;
+      padding: 5px;
 
       &:hover {
+        background-color: $white;
         color: $green;
       }
     }

@@ -23,9 +23,9 @@
         display: block;
         position: absolute;
         width: 100vw;
-        height: 450px;
+        height: 500px;
         background-color: $gray;
-        top: 215px;
+        top: 172px;
         left: 0;
         z-index: -1;
         @include devices(tablet) {

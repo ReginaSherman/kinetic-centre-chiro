@@ -14,7 +14,7 @@
 .image-wrapper {
   position: relative;
   height: 300px;
-  flex: 0 1 20%;
+  flex: 0 1 24%;
   overflow: hidden;
   @include devices(tablet) {
     flex: 0 1 30%;
@@ -52,6 +52,7 @@
       h2 {
         font-size: 22px;
         text-transform: uppercase;
+        margin-bottom: 10px;
       }
 
       .fade-description {

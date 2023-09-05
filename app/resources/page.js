@@ -98,8 +98,6 @@ export default function Resources() {
         <section className="section resource-links">
           <div className="wrapper">
             <div className="links-container">
-              <ResourceLink link="/" buttonText="Home" />
-              <ResourceLink link="/about-us" buttonText="About Us" />
               <ResourceLink link="/doctors" buttonText="Doctors" />
               <ResourceLink link="/treatments" buttonText="Treatments" />
               <ResourceLink link="/" buttonText="Podcasts" />
@@ -149,9 +147,7 @@ export default function Resources() {
           <div className="wrapper">
             <div className="cta-container">
               <h3 className="uppercase">ENJOY YOUR VISIT?</h3>
-              <p className="description">
-              LEAVE US A REVIEW
-              </p>
+              <p className="description">LEAVE US A REVIEW</p>
               <a
                 href="https://kineticcentredallas.janeapp.com/"
                 target="_blank"
