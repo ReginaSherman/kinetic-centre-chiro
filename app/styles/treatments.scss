@@ -18,6 +18,25 @@
       flex-direction: row;
       align-items: center;
 
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 450px;
+        background-color: $gray;
+        top: 215px;
+        left: 0;
+        z-index: -1;
+        @include devices(tablet) {
+          display: none;
+        }
+      }
+
+      @include devices(mobile) {
+        display: none;
+      }
+
       .left-side {
         display: flex;
         flex-direction: column;
@@ -64,13 +83,25 @@
       }
 
       .right-side {
-        flex: 0 1 auto;
+        flex: 0 1 50%;
+
+        .image-container {
+          position: relative;
+          width: 100%;
+          height: auto;
+          z-index: 2;
+
+          @include devices(tablet) {
+            width: 400px;
+            height: auto;
+          }
+        }
 
         .treatment-photo {
-          position: relative;
-          // top: -40px;
-          z-index: 2;
-          //   right: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: none;
         }
 
         .deco {
@@ -93,20 +124,20 @@
             }
           }
         }
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 100vw;
-          height: 450px;
-          background-color: $gray;
-          top: 215px;
-          left: 0;
-          z-index: -1;
-          @include devices(tablet) {
-            display: none;
-          }
-        }
+        // &::after {
+        //   content: "";
+        //   display: block;
+        //   position: absolute;
+        //   width: 100vw;
+        //   height: 450px;
+        //   background-color: $gray;
+        //   top: 215px;
+        //   left: 0;
+        //   z-index: -1;
+        //   @include devices(tablet) {
+        //     display: none;
+        //   }
+        // }
 
         @include devices(mobile) {
           display: none;
