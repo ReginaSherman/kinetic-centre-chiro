@@ -18,7 +18,7 @@ import slideImage11 from "public/images/PHOTO_10.jpg";
 const images = [
   {
     src: slideImage8,
-    title: "CONSULTATION",
+    title: "myofascial therapy",
     description:
       "Patients who receive myofascial release will experience an increase in range of motion, a decrease in pain, and an increase in fascial mobility.",
   },
@@ -50,7 +50,7 @@ const images = [
     src: slideImage4,
     title: "GOLF SWING ANALYSIS",
     description:
-      "Image 2 DescriptionUsing our 3D technology we will identify tissue, joint restrictions, and instabilities that are affecting your swing.",
+      "Using our 3D technology we will identify tissue, joint restrictions, and instabilities that are affecting your swing.",
   },
   {
     src: slideImage5,
@@ -69,16 +69,6 @@ const images = [
     title: "LASER THERAPY",
     description:
       "Laser therapy uses focused light energy to promote tissue healing, reduce inflammation, and alleviate pain.",
-  },
-  {
-    src: slideImage9,
-    title: "Image 2 Title",
-    description: "Image 2 Description",
-  },
-  {
-    src: slideImage10,
-    title: "Image 2 Title",
-    description: "Image 2 Description",
   },
 ];
 

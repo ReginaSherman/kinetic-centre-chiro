@@ -149,7 +149,7 @@ export default function Resources() {
               <h3 className="uppercase">ENJOY YOUR VISIT?</h3>
               <p className="description">LEAVE US A REVIEW</p>
               <a
-                href="https://kineticcentredallas.janeapp.com/"
+                href="https://www.google.com/search?q=kinetic+centre+frisco&sca_esv=564233762&ei=R3D-ZOX7KaCjqtsPhPia6Ao&ved=0ahUKEwilu4fmtqGBAxWgkWoFHQS8Bq0Q4dUDCBA&uact=5&oq=kinetic+centre+frisco&gs_lp=Egxnd3Mtd2l6LXNlcnAiFWtpbmV0aWMgY2VudHJlIGZyaXNjbzIOEC4YigUYxwEYrwEYkQIyBRAAGIAEMgIQJjIdEC4YigUYxwEYrwEYkQIYlwUY3AQY3gQY4ATYAQFI4SBQ6RRYgB1wA3gAkAEAmAHCAqABgg6qAQcwLjIuNS4xuAEDyAEA-AEBwgIOEC4YrwEYxwEYgAQYsAPCAgsQABiKBRiGAxiwA8ICBxAAGIoFGEPCAg0QLhivARjHARiKBRhDwgILEC4YgAQYxwEYrwHCAggQABiKBRiGA8ICCxAuGK8BGMcBGIAEwgIGEAAYFhgewgIMEC4YFhgeGMcBGNEDwgIcEC4YrwEYxwEYigUYQxiXBRjcBBjeBBjgBNgBAeIDBBgBIEGIBgGQBgK6BgYIARABGBQ&sclient=gws-wiz-serp#lrd=0x864c3d54a445a495:0xdc25305eddb5b2a0,1"
                 target="_blank"
                 className="button dark"
               >

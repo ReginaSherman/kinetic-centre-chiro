@@ -8,7 +8,7 @@ import { useCallback, useState, useEffect } from "react";
 
 const containerStyle = {
   width: "100vw",
-  height: "100vh",
+  height: "115vh",
 };
 
 const center = {
@@ -62,8 +62,8 @@ export default function Map() {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        <Marker position={marker_1} />
-        <Marker position={marker_2} />
+        <Marker position={marker_1} label='Kinetic Centre Dallas'/>
+        <Marker position={marker_2} label='Kinetic Centre Frisco'/>
       </GoogleMap>
     </>
   ) : (

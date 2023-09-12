@@ -57,7 +57,7 @@ export default function Header() {
       <div className="wrapper">
         <nav className="navbar">
           <div className="logo-container">
-            <Link href='/'>
+            <Link href="/">
               <Image src={smallLogo} alt="kinetic centre logo" />
             </Link>
           </div>
@@ -79,7 +79,7 @@ export default function Header() {
             </li>
             <li className="list-item">
               <a href="/doctors" className="nav-link">
-                doctors
+                practitioners
               </a>
             </li>
             <li className="list-item">
@@ -101,7 +101,11 @@ export default function Header() {
                 >
                   Book Now
                 </a>
-                <a href="/" target="_blank" className="button light">
+                <a
+                  href="https://kineticcentredallas.janeapp.com/login"
+                  target="_blank"
+                  className="button light"
+                >
                   Sign In
                 </a>
               </div>

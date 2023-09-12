@@ -19,8 +19,8 @@ import beau from "public/beau-headshot.webp";
 import brennan from "public/brennan-headshot.webp";
 import diane from "public/diane-headshot.webp";
 import brittany from "public/Brittany-headshot.jpeg";
-import matt from "public/matt-headshot.jpeg";
-import kristina from "public/kristina-headshot.jpeg";
+import matt from "public/matt-headshot.png";
+import kristina from "public/kristina-headshot.png";
 
 const testimonials = [
   {
@@ -170,7 +170,7 @@ export default function About() {
                 <TeamMember
                   image={beau}
                   alt="Doctor Beau"
-                  teamMemberRole="Ceo of Kinetic Centre"
+                  teamMemberRole="CEO of Kinetic Centres & Practitioner"
                   teamMemberName="Dr. Beau Sauls"
                   teamMemberAbout="Dr. Sauls is the leading Kinetisense expert in the US and specializes in the Kinetisense Advanced Movement Screening and treatments/rehab to help improve areas of dysfunction."
                 />
@@ -203,15 +203,15 @@ export default function About() {
                 <TeamMember
                   image={matt}
                   alt="Doctor Matt"
-                  teamMemberRole="practitioner"
+                  teamMemberRole="Clinic Director & Practitioner"
                   teamMemberName="dR. matt ortega"
                   teamMemberAbout="With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work."
                 />
                 <TeamMember
                   image={kristina}
                   alt="Doctor Kristina"
-                  teamMemberRole="director of marketing"
-                  teamMemberName="dR. kristina myles, dc, ccsp"
+                  teamMemberRole="Practitioner & Director of Marketing"
+                  teamMemberName="dR. kristina myles"
                   teamMemberAbout="Dr. Kristina Myles, a Certified Chiropractic Sports Practitioner®, excels in resolving injuries through soft tissue techniques and dry needling with an extensive athletic background. 
               "
                 />

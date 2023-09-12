@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FsLightbox from "fslightbox-react";
 import { Spline_Sans } from "next/font/google";
 import "../styles/doctors.scss";
 import BottomBanner from "../components/BottomBanner";
@@ -13,6 +14,7 @@ import beau from "public/doctors/beau.png";
 import brennan from "public/doctors/brennan.png";
 import matt from "public/doctors/matt.png";
 import kristina from "public/doctors/kristina.png";
+import brittany from "public/Brittany-headshot.jpeg";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -20,7 +22,72 @@ const splineSans = Spline_Sans({
   variable: "--font-spline",
 });
 
+const doctorsData = [
+  {
+    name: "Dr. Beau Sauls",
+    title: "CEO of Kinetic Centres & Practitioner",
+    description:
+      "Dr. Sauls is the leading Kinetisense expert in the US and specializes in the Kinetisense Advanced Movement Screening and treatments/rehab to help improve areas of dysfunction.",
+    bookLink: "https://kineticcentredallas.janeapp.com/",
+    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    imageSrc: beau,
+  },
+  {
+    name: "Dr. Brennan Riche",
+    title: "Practitioner",
+    description:
+      "With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work.",
+    bookLink:
+      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/2",
+    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    imageSrc: brennan,
+  },
+  {
+    name: "Dr. Matt Ortega",
+    title: "Clinic Director & Practitioner",
+    description:
+      "With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work.",
+    bookLink:
+      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/11",
+    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    imageSrc: matt,
+  },
+  {
+    name: "Dr. Kristina Myles",
+    title: "Practitioner & Director of Marketing",
+    description:
+      "Dr. Kristina Myles, a Certified Chiropractic Sports Practitioner®, excels in resolving injuries through soft tissue techniques and dry needling with an extensive athletic background.",
+    bookLink:
+      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
+    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    imageSrc: kristina,
+  },
+  {
+    name: "Brittany gibson",
+    title: "sports massage therapist",
+    description:
+      "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. ",
+    bookLink:
+      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
+    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    imageSrc: kristina,
+  },
+];
+
 export default function Doctors() {
+  const [open, setOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("");
+  // const [videoType, setVideoType] = useState("");
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [toggler, setToggler] = useState(false);
+
+  const openLightbox = (videoSrc) => {
+    setToggler(!toggler);
+    setVideoSrc(videoSrc);
+    setOpen(true);
+    console.log(videoSrc);
+  };
+
   return (
     <div>
       <Header />
@@ -28,7 +95,9 @@ export default function Doctors() {
         <div className="doctors-hero">
           <div className="wrapper">
             <div className="hero-text">
-              <h2 className="h2 uppercase">our doctors - elite & DETERMINED</h2>
+              <h2 className="h2 uppercase">
+                our practitioners - elite & DETERMINED
+              </h2>
               <p className={`description + ${splineSans.className}`}>
                 We are committed to providing patient-focused care that allows
                 you to enjoy life pain-free. Please call 469-697-9545 to speak
@@ -48,126 +117,37 @@ export default function Doctors() {
         <section>
           <div className="wrapper">
             <div className="headshot-container">
-              <div className="headshot">
-                <div className="left-side">
-                  <div className="image-container">
-                    <Image src={beau} alt="alt" />
+              {doctorsData.map((doctor, index) => (
+                <div className="headshot" key={index}>
+                  <div className="left-side">
+                    <div className="image-container">
+                      <Image src={doctor.imageSrc} alt={doctor.name} />
+                    </div>
+                  </div>
+                  <div className="right-side">
+                    <div className="text-container">
+                      <p className="super-header uppercase">{doctor.title}</p>
+                      <p className="title h3 uppercase">{doctor.name}</p>
+                      <p className="description">{doctor.description}</p>
+                    </div>
+                    <a
+                      href={doctor.bookLink}
+                      target="_blank"
+                      className="button dark"
+                    >
+                      Book Now
+                    </a>
+                    <button
+                      type="button"
+                      className="button light"
+                      onClick={() => openLightbox(doctor.videoSrc)}
+                    >
+                      View Bio
+                    </button>
+                    <SocialLinks />
                   </div>
                 </div>
-                <div className="right-side">
-                  <div className="text-container">
-                    <p className="super-header uppercase">
-                      ceo of kinetic centres
-                    </p>
-                    <p className="title h3 uppercase">dR. bEAU SAULS</p>
-
-                    <p className="description">
-                      Dr. Sauls is the leading Kinetisense expert in the US and
-                      specializes in the Kinetisense Advanced Movement Screening
-                      and treatments/rehab to help improve areas of dysfunction.
-                    </p>
-                  </div>
-                  <a
-                    href="https://kineticcentredallas.janeapp.com/"
-                    target="_blank"
-                    className="button dark"
-                  >
-                    Book Now
-                  </a>
-                  <SocialLinks />
-                </div>
-              </div>
-
-              <div className="headshot">
-                <div className="left-side">
-                  <div className="image-container">
-                    <Image src={brennan} alt="alt" />
-                  </div>
-                </div>
-                <div className="right-side">
-                  <div className="text-container">
-                    <p className="super-header uppercase">practitioner</p>
-                    <p className="title h3 uppercase">dR. brennan Riche</p>
-
-                    <p className="description">
-                      With the knowledge from chiropractic school and years of
-                      experience from strength training. His passion is helping
-                      patients overcome the obstacles necessary to perform well
-                      in life, sports, or work.
-                    </p>
-                  </div>
-                  <a
-                    href="https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/2"
-                    target="_blank"
-                    className="button dark"
-                  >
-                    Book Now
-                  </a>
-                  <SocialLinks />
-                </div>
-              </div>
-
-              <div className="headshot">
-                <div className="left-side">
-                  <div className="image-container">
-                    <Image src={matt} alt="alt" />
-                  </div>
-                </div>
-                <div className="right-side">
-                  <div className="text-container">
-                    <p className="super-header uppercase">clinic DIRECTOR</p>
-                    <p className="title h3 uppercase">dR. matt ortega</p>
-
-                    <p className="description">
-                      With the knowledge from chiropractic school and years of
-                      experience from strength training. His passion is helping
-                      patients overcome the obstacles necessary to perform well
-                      in life, sports, or work.
-                    </p>
-                  </div>
-                  <a
-                    href="https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/11"
-                    target="_blank"
-                    className="button dark"
-                  >
-                    Book Now
-                  </a>
-                  <SocialLinks />
-                </div>
-              </div>
-
-              <div className="headshot">
-                <div className="left-side">
-                  <div className="image-container">
-                    <Image src={kristina} alt="alt" />
-                  </div>
-                </div>
-                <div className="right-side">
-                  <div className="text-container">
-                    <p className="super-header uppercase">
-                      director of marketing
-                    </p>
-                    <p className="title h3 uppercase">
-                      dR. kristina myles, dc, ccsp
-                    </p>
-
-                    <p className="description">
-                      Dr. Kristina Myles, a Certified Chiropractic Sports
-                      Practitioner®, excels in resolving injuries through soft
-                      tissue techniques and dry needling with an extensive
-                      athletic background.
-                    </p>
-                  </div>
-                  <a
-                    href="https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15"
-                    target="_blank"
-                    className="button dark"
-                  >
-                    Book Now
-                  </a>
-                  <SocialLinks />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -175,6 +155,8 @@ export default function Doctors() {
         <BottomBanner />
       </main>
       <Footer />
+
+      <FsLightbox toggler={toggler} sources={[videoSrc]} />
     </div>
   );
 }

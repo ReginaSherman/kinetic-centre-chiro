@@ -33,15 +33,12 @@
         }
       }
 
-      @include devices(mobile) {
-        display: none;
-      }
 
       .left-side {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        flex: 0 1 70%;
+        flex: 0 1 50%;
 
         @include devices(mobile) {
           flex: 0 1 100%;
@@ -83,7 +80,7 @@
       }
 
       .right-side {
-        flex: 0 1 50%;
+        flex: 0 1 33%;
 
         .image-container {
           position: relative;

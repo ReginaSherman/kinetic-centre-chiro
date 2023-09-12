@@ -20,7 +20,7 @@ import "./styles/home.scss";
 import "./styles/globals.scss";
 // import "./styles/TreatmentSlider.module.scss";
 
-import logo from "/public/LOGO.svg";
+import logo from "/public/KineticCentreLogo.png";
 import dr from "/public/images/DRPHOTO.png";
 import { Spline_Sans } from "next/font/google";
 
@@ -50,7 +50,7 @@ import Slider from "./components/Slider";
 const images = [
   {
     src: slideImage8,
-    title: "CONSULTATION",
+    title: "myofascial therapy",
     description:
       "Patients who receive myofascial release will experience an increase in range of motion, a decrease in pain, and an increase in fascial mobility.",
   },
@@ -88,7 +88,7 @@ const images = [
     src: slideImage5,
     title: "3D bARBELL ANALYSIS",
     description:
-      "The 3D Barbell allows us to break down back squats, deadlifts, and many other lifts that you perform in the gym",
+      "The 3D Barbell Analysis allows us to break down back squats, deadlifts, and many other lifts that you perform in the gym",
   },
   {
     src: slideImage6,
@@ -101,16 +101,6 @@ const images = [
     title: "LASER THERAPY",
     description:
       "Laser therapy uses focused light energy to promote tissue healing, reduce inflammation, and alleviate pain.",
-  },
-  {
-    src: slideImage9,
-    title: "Image 2 Title",
-    description: "Image 2 Description",
-  },
-  {
-    src: slideImage10,
-    title: "Image 2 Title",
-    description: "Image 2 Description",
   },
 ];
 
@@ -165,7 +155,7 @@ export default function Home() {
                     HELPING YOU STAY ACTIVE AND PAIN FREE
                   </h2>
                   <p className={`description + ${splineSans.className}`}>
-                    The Kinetic Centre USA is a multidisciplinary facility that
+                    Kinetic Centre USA is a multidisciplinary facility that
                     provides advanced assessment, treatment and rehab. Kinetic
                     Centre Practitioners help you feel and move better using
                     objective biomechanical data.
