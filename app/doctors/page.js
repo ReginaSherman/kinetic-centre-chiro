@@ -29,7 +29,7 @@ const doctorsData = [
     description:
       "Dr. Sauls is the leading Kinetisense expert in the US and specializes in the Kinetisense Advanced Movement Screening and treatments/rehab to help improve areas of dysfunction.",
     bookLink: "https://kineticcentredallas.janeapp.com/",
-    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=pPr8_pLSyuM", // Replace with the actual video source
     imageSrc: beau,
   },
   {
@@ -39,7 +39,7 @@ const doctorsData = [
       "With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work.",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/2",
-    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=d0nLzMhNR-s", // Replace with the actual video source
     imageSrc: brennan,
   },
   {
@@ -49,7 +49,7 @@ const doctorsData = [
       "With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work.",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/11",
-    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=ynGMtXHmNj4", // Replace with the actual video source
     imageSrc: matt,
   },
   {
@@ -59,7 +59,7 @@ const doctorsData = [
       "Dr. Kristina Myles, a Certified Chiropractic Sports Practitioner®, excels in resolving injuries through soft tissue techniques and dry needling with an extensive athletic background.",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
-    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=Wl42naYXv_o", // Replace with the actual video source
     imageSrc: kristina,
   },
   {
@@ -69,7 +69,7 @@ const doctorsData = [
       "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. ",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
-    videoSrc: "https://www.youtube.com/watch?v=9XRJMyqfgng", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
     imageSrc: kristina,
   },
 ];
