@@ -10,10 +10,10 @@ import BottomBanner from "../components/BottomBanner";
 
 import Image from "next/image";
 
-import beau from "public/doctors/beau.png";
-import brennan from "public/doctors/brennan.png";
-import matt from "public/doctors/matt.png";
-import kristina from "public/doctors/kristina.png";
+import beau from "public/beau.png";
+import brennan from "public/brennan.png";
+import matt from "public/matt.png";
+import kristina from "public/Dr.Myles.png";
 import brittany from "public/Brittany-headshot.jpeg";
 
 const splineSans = Spline_Sans({
