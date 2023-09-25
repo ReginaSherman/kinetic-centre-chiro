@@ -10,11 +10,11 @@ import BottomBanner from "../components/BottomBanner";
 
 import Image from "next/image";
 
-import beau from "public/beau.png";
+import beau from "public/beau-min.png";
 import brennan from "public/brennan.png";
 import matt from "public/matt.png";
 import kristina from "public/Dr.Myles.png";
-import brittany from "public/Brittany-headshot.jpeg";
+import brittany from "public/BrittanyPhoto.png";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -70,7 +70,7 @@ const doctorsData = [
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
     videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
-    imageSrc: kristina,
+    imageSrc: brittany,
   },
 ];
 
