@@ -2,18 +2,19 @@ import Image from "next/image";
 
 import "../styles/TreatmentsGrid.scss";
 
-
 import slideImage1 from "public/images/PHOTO.jpg";
 import slideImage2 from "public/images/PHOTO_1.jpg";
 import slideImage3 from "public/images/PHOTO_2.jpg";
 import slideImage4 from "public/images/PHOTO_3.jpg";
 import slideImage5 from "public/images/PHOTO_4.jpg";
 import slideImage6 from "public/images/PHOTO_5.jpg";
-import slideImage7 from "public/images/PHOTO_6.jpg";
+import slideImage7 from "public/images/PHOTO13.jpg";
 import slideImage8 from "public/images/PHOTO_7.jpg";
 import slideImage9 from "public/images/PHOTO_8.jpg";
 import slideImage10 from "public/images/PHOTO_9.jpg";
 import slideImage11 from "public/images/PHOTO_10.jpg";
+import slideImage12 from "public/images/photo11.png";
+import slideImage13 from "public/images/photo12.jpg";
 
 const images = [
   {
@@ -21,6 +22,17 @@ const images = [
     title: "myofascial therapy",
     description:
       "Patients who receive myofascial release will experience an increase in range of motion, a decrease in pain, and an increase in fascial mobility.",
+  },
+  {
+    src: slideImage13,
+    title: "RUNNING GAIT ANALYSIS",
+    description:
+      "Using our customized Assault Runner and high-speed motion capture camera, we will analyze your running gait to help you improve your performance and reduce your risk of injury.",
+  },
+  {
+    src: slideImage12,
+    title: "smart cupping",
+    description: "Cupping treatment using motion, red light therapy and heat.",
   },
   {
     src: slideImage11,
@@ -66,9 +78,9 @@ const images = [
   },
   {
     src: slideImage7,
-    title: "LASER THERAPY",
+    title: "dry needling",
     description:
-      "Laser therapy uses focused light energy to promote tissue healing, reduce inflammation, and alleviate pain.",
+      "Dry Needling uses a fine-filament needle that is inserted into the skin and muscle, targeted at myofascial trigger points with the goal of decreasing pain and increasing function.",
   },
 ];
 

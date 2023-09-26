@@ -100,7 +100,10 @@ export default function Resources() {
             <div className="links-container">
               <ResourceLink link="/doctors" buttonText="Doctors" />
               <ResourceLink link="/treatments" buttonText="Treatments" />
-              <ResourceLink link="/" buttonText="Podcasts" />
+              <ResourceLink
+                link="https://open.spotify.com/show/3eWMTeFomVrHpP7bdcgeEq?si=rrnIfGvQRtCu39y5lU14-A&utm_source=sms&utm_medium=sms&nd=1&_branch_match_id=1139711590585308397&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy7IL8lMq9TLyczL1nePSs0KKA9xyndJAgD9ljQuIAAAAA%3D%3D"
+                buttonText="Podcasts"
+              />
               <ResourceLink
                 link="/about-us#our-team"
                 buttonText="Meet the Team"
