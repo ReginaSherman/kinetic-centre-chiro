@@ -68,7 +68,7 @@ const doctorsData = [
     description:
       "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. ",
     bookLink:
-      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
+      "https://kineticcentredallas.janeapp.com/",
     videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
     imageSrc: brittany,
   },

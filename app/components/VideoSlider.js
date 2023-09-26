@@ -6,13 +6,13 @@ import Image from "next/image";
 
 const videos = [
   {
-    src: "https://www.youtube.com/embed/5E8RGGYY-UI?",
+    src: "https://www.youtube.com/embed/ToaGG3F7if0?si=LvWPkHYMTJlmsWfN",
   },
   {
-    src: "https://www.youtube.com/embed/qpzWEoKayQo?si=d8bmswwUbniOvjDv",
+    src: "https://www.youtube.com/embed/v-5_6qUHne8?si=ENJ32uROzO2ZLIBh",
   },
   {
-    src: "https://www.youtube.com/embed/5kiY87XLahk?si=IsKi843lAXEdlwWm",
+    src: "https://www.youtube.com/embed/4yxx5HCtx8Q?si=7t7U4L8Vzk33q7Ew",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function VideoSlider({ images }) {
           // eslint-disable-next-line react/jsx-key
           <swiper-slide key={index} className="image-wrapper">
             <iframe
-            className="slide-video"
+              className="slide-video"
               width="560"
               height="315"
               src={video.src}
