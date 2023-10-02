@@ -21,7 +21,7 @@ import "./styles/globals.scss";
 // import "./styles/TreatmentSlider.module.scss";
 
 import logo from "/public/KineticCentreLogo.png";
-import dr from "/public/images/DRPHOTO.png";
+import dr from "/public/DRPHOTO.png";
 import { Spline_Sans } from "next/font/google";
 
 const splineSans = Spline_Sans({
