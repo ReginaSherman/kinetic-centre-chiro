@@ -15,6 +15,7 @@ import brennan from "public/brennan.png";
 import matt from "public/matt.png";
 import kristina from "public/Dr.Myles.png";
 import brittany from "public/BrittanyPhoto.png";
+import play from "public/play-button.png";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -67,8 +68,7 @@ const doctorsData = [
     title: "sports massage therapist",
     description:
       "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. ",
-    bookLink:
-      "https://kineticcentredallas.janeapp.com/",
+    bookLink: "https://kineticcentredallas.janeapp.com/",
     videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
     imageSrc: brittany,
   },
@@ -142,7 +142,8 @@ export default function Doctors() {
                       className="button light"
                       onClick={() => openLightbox(doctor.videoSrc)}
                     >
-                      View Bio
+                      View Bio{" "}
+                      <Image className="play-button" src={play} alt="alt" />
                     </button>
                     <SocialLinks />
                   </div>
