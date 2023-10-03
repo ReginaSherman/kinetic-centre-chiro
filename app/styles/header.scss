@@ -41,6 +41,10 @@
         }
         &.hide {
           display: none;
+
+          @include devices(mobile) {
+            display: flex;
+          }
         }
       }
 
@@ -53,6 +57,10 @@
           padding-bottom: 15px;
           border-bottom: 0px solid $green;
           transition: border-bottom 0.2s ease-in-out;
+
+          @include devices(tablet) {
+            padding-bottom: 0px;
+          }
 
           &.active,
           &:hover {

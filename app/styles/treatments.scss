@@ -18,6 +18,10 @@
       flex-direction: row;
       align-items: center;
 
+      @include devices(mobile) {
+        padding: 40px 0;
+      }
+
       &::after {
         content: "";
         display: block;
@@ -32,7 +36,6 @@
           display: none;
         }
       }
-
 
       .left-side {
         display: flex;

@@ -15,6 +15,10 @@
     max-width: 532px;
     height: auto;
     margin: 0 20px;
+
+    @include devices(mobile) {
+      margin: 2px;
+    }
   }
 
   .testimonial-text {
@@ -77,6 +81,10 @@
       &:hover {
         background-color: $white;
         color: $green;
+      }
+
+      @include devices(mobile) {
+        display: none;
       }
     }
   }

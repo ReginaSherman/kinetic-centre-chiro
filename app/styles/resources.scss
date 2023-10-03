@@ -19,6 +19,10 @@
       flex-direction: row;
       align-items: flex-end;
 
+      @include devices(mobile) {
+        padding: 40px 0;
+      }
+
       .left-side {
         display: flex;
         flex-direction: column;

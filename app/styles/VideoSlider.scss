@@ -1,6 +1,12 @@
+@import "mixins";
+
 .video-slider {
   text-align: center;
   margin: 20px;
+
+  @include devices(mobile) {
+    margin: 0px;
+  }
 
   swiper-container {
     &:active {

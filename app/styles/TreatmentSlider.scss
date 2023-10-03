@@ -1,3 +1,5 @@
+@import "mixins";
+
 .treatment-slider {
   text-align: center;
   margin: 20px;
@@ -17,6 +19,10 @@
     height: 310px;
     margin: 0 10px;
     overflow: hidden;
+
+    @include devices(mobile) {
+      margin: 0;
+    }
 
     .slide-img {
       width: 100%;
@@ -83,7 +89,7 @@
       }
     }
   }
-// syling "parts" of the swiper https://swiperjs.com/element#parts
+  // syling "parts" of the swiper https://swiperjs.com/element#parts
   swiper-container {
     &::part(container) {
       padding: 50px 0 !important;
@@ -111,7 +117,8 @@
       background-color: $green;
       opacity: 1;
     }
-    &::part(button-next), &::part(button-prev) {
+    &::part(button-next),
+    &::part(button-prev) {
       background-color: $green;
       color: $white;
       padding: 5px;
@@ -119,6 +126,10 @@
       &:hover {
         background-color: $white;
         color: $green;
+      }
+
+      @include devices(mobile) {
+        display: none;
       }
     }
   }
