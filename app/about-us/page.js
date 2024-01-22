@@ -21,7 +21,7 @@ import diane from "public/diane-headshot.webp";
 import brittany from "public/Brittany-headshot.jpeg";
 import matt from "public/matt-headshot.png";
 import kristina from "public/kristina-headshot.png";
-import tyler from "public/drtyler.jpg";
+import tyler from "public/drtyler.webp";
 
 const testimonials = [
   {
