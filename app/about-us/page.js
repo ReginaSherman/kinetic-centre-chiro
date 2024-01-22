@@ -184,9 +184,9 @@ export default function About() {
                 />
                   <TeamMember
                     image={tyler}
-                    alt="Tyler Garcia"
+                    alt="Doctor Tyler Garcia"
                     teamMemberRole="practitioner"
-                    teamMemberName="tyler garcia"
+                    teamMemberName="dr. tyler garcia"
                     teamMemberAbout="As a previous athlete and speed and conditioning coach, I have developed a passion for teaching and growing physically and mentally as a human/athlete. Through Chiropractic, I utilize my previous experience to direct and manage the neuromuscular system to improve recovery time and prevent re-injury."
                   />
                 <TeamMember
