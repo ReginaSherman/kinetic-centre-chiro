@@ -32,6 +32,8 @@ const doctorsData = [
     bookLink: "https://kineticcentredallas.janeapp.com/",
     videoSrc: "https://www.youtube.com/watch?v=pPr8_pLSyuM", // Replace with the actual video source
     imageSrc: beau,
+    instagram: "https://www.instagram.com/the3ddoc/",
+    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
   },
   {
     name: "Dr. Brennan Riche",
@@ -42,6 +44,8 @@ const doctorsData = [
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/2",
     videoSrc: "https://www.youtube.com/watch?v=d0nLzMhNR-s", // Replace with the actual video source
     imageSrc: brennan,
+    instagram: "https://www.instagram.com/3dbarbelldoc/",
+    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
   },
   {
     name: "Dr. Matt Ortega",
@@ -52,6 +56,8 @@ const doctorsData = [
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/11",
     videoSrc: "https://www.youtube.com/watch?v=ynGMtXHmNj4", // Replace with the actual video source
     imageSrc: matt,
+    instagram: "https://www.instagram.com/3dswingdoc/",
+    facebook: "https://www.facebook.com/KineticCentreFrisco?mibextid=hu50Ix",
   },
   {
     name: "Dr. Kristina Myles",
@@ -62,6 +68,8 @@ const doctorsData = [
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
     videoSrc: "https://www.youtube.com/watch?v=Wl42naYXv_o", // Replace with the actual video source
     imageSrc: kristina,
+    instagram: "https://www.instagram.com/3dsportsdoc/",
+    facebook: "https://www.facebook.com/KineticCentreFrisco?mibextid=hu50Ix",
   },
   {
     name: "Brittany gibson",
@@ -71,6 +79,8 @@ const doctorsData = [
     bookLink: "https://kineticcentredallas.janeapp.com/",
     videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
     imageSrc: brittany,
+    instagram: "https://www.instagram.com/3dmt_brittany/",
+    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
   },
 ];
 
@@ -145,7 +155,14 @@ export default function Doctors() {
                       View Bio{" "}
                       <Image className="play-button" src={play} alt="alt" />
                     </button>
-                    <SocialLinks />
+                    <div className="socials-container">
+                      <Link href={doctor.instagram} target="_blank">
+                        <Image src={instagram} alt="instagram" />
+                      </Link>
+                      <Link href={doctor.facebook} target='_blank'>
+                        <Image src={facebook} alt="facebook" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -167,18 +184,18 @@ import instagram from "public/doctors/Group.svg";
 import twitter from "public/doctors/Group-1.svg";
 import Link from "next/link";
 
-const SocialLinks = () => {
-  return (
-    <div className="socials-container">
-      <Link href="/">
-        <Image src={instagram} alt="instagram" />
-      </Link>
-      <Link href="/">
-        <Image src={twitter} alt="twitter" />
-      </Link>
-      <Link href="/">
-        <Image src={facebook} alt="facebook" />
-      </Link>
-    </div>
-  );
-};
+// const SocialLinks = () => {
+//   return (
+//     <div className="socials-container">
+//       <Link href="">
+//         <Image src={instagram} alt="instagram" />
+//       </Link>
+//       <Link href="/">
+//         <Image src={twitter} alt="twitter" />
+//       </Link>
+//       <Link href="/">
+//         <Image src={facebook} alt="facebook" />
+//       </Link>
+//     </div>
+//   );
+// };

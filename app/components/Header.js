@@ -9,6 +9,7 @@ export default function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
+    console.log('clicked')
     setMenuOpen(!isMenuOpen);
   };
 

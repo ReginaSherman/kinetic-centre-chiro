@@ -21,6 +21,7 @@ import diane from "public/diane-headshot.webp";
 import brittany from "public/Brittany-headshot.jpeg";
 import matt from "public/matt-headshot.png";
 import kristina from "public/kristina-headshot.png";
+import tyler from "public/drtyler.jpg";
 
 const testimonials = [
   {
@@ -181,6 +182,13 @@ export default function About() {
                   teamMemberName="dR. brennan riche"
                   teamMemberAbout="With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work."
                 />
+                  <TeamMember
+                    image={tyler}
+                    alt="Tyler Garcia"
+                    teamMemberRole="practitioner"
+                    teamMemberName="tyler garcia"
+                    teamMemberAbout="As a previous athlete and speed and conditioning coach, I have developed a passion for teaching and growing physically and mentally as a human/athlete. Through Chiropractic, I utilize my previous experience to direct and manage the neuromuscular system to improve recovery time and prevent re-injury."
+                  />
                 <TeamMember
                   image={diane}
                   alt="Diane Shepherd"
