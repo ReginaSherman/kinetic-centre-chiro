@@ -16,7 +16,7 @@ const splineSans = Spline_Sans({
 
 import dr from "public/images/PHOTO_1.jpg";
 import beau from "public/beau-headshot.webp";
-import brennan from "public/brennan-headshot.webp";
+import brennan from "public/brennan-headshot.png";
 import diane from "public/diane-headshot.webp";
 import brittany from "public/Brittany-headshot.jpeg";
 import matt from "public/matt-headshot.png";

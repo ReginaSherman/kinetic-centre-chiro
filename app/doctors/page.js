@@ -15,6 +15,7 @@ import brennan from "public/brennan.png";
 import matt from "public/matt.png";
 import kristina from "public/Dr.Myles.png";
 import brittany from "public/BrittanyPhoto.png";
+import tyler from "public/tyler.png"
 import play from "public/play-button.png";
 
 const splineSans = Spline_Sans({
@@ -70,6 +71,18 @@ const doctorsData = [
     imageSrc: kristina,
     instagram: "https://www.instagram.com/3dsportsdoc/",
     facebook: "https://www.facebook.com/KineticCentreFrisco?mibextid=hu50Ix",
+  },
+  {
+    name: "Dr. Tyler Garcia",
+    title: "Practitioner",
+    description:
+      "As a previous athlete and speed and conditioning coach, I have developed a passion for teaching and growing physically and mentally as a human/athlete. Through Chiropractic, I utilize my previous experience to direct and manage the neuromuscular system to improve recovery time and prevent re-injury.",
+    bookLink:
+      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/20",
+    videoSrc: "", // Replace with the actual video source
+    imageSrc: tyler,
+    instagram: "https://www.instagram.com/3dkettlebelldoc?igsh=MXR4eGthamN6NTVsZA==",
+    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
   },
   {
     name: "Brittany gibson",
@@ -147,6 +160,7 @@ export default function Doctors() {
                     >
                       Book Now
                     </a>
+                    {doctor.videoSrc ?                     
                     <button
                       type="button"
                       className="button light"
@@ -154,7 +168,9 @@ export default function Doctors() {
                     >
                       View Bio{" "}
                       <Image className="play-button" src={play} alt="alt" />
-                    </button>
+                    </button> 
+                    : '' }
+
                     <div className="socials-container">
                       <Link href={doctor.instagram} target="_blank">
                         <Image src={instagram} alt="instagram" />
