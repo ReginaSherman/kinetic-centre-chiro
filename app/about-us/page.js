@@ -182,13 +182,7 @@ export default function About() {
                   teamMemberName="dR. brennan riche"
                   teamMemberAbout="With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work."
                 />
-                  <TeamMember
-                    image={tyler}
-                    alt="Doctor Tyler Garcia"
-                    teamMemberRole="practitioner"
-                    teamMemberName="dr. tyler garcia"
-                    teamMemberAbout="As a previous athlete and speed and conditioning coach, I have developed a passion for teaching and growing physically and mentally as a human/athlete. Through Chiropractic, I utilize my previous experience to direct and manage the neuromuscular system to improve recovery time and prevent re-injury."
-                  />
+\
                 <TeamMember
                   image={diane}
                   alt="Diane Shepherd"

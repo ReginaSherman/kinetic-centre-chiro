@@ -73,18 +73,6 @@ const doctorsData = [
     facebook: "https://www.facebook.com/KineticCentreFrisco?mibextid=hu50Ix",
   },
   {
-    name: "Dr. Tyler Garcia",
-    title: "Practitioner",
-    description:
-      "As a previous athlete and speed and conditioning coach, I have developed a passion for teaching and growing physically and mentally as a human/athlete. Through Chiropractic, I utilize my previous experience to direct and manage the neuromuscular system to improve recovery time and prevent re-injury.",
-    bookLink:
-      "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/20",
-    videoSrc: "", // Replace with the actual video source
-    imageSrc: tyler,
-    instagram: "https://www.instagram.com/3dkettlebelldoc?igsh=MXR4eGthamN6NTVsZA==",
-    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
-  },
-  {
     name: "Brittany gibson",
     title: "sports massage therapist",
     description:
