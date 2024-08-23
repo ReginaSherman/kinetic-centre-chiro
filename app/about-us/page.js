@@ -17,11 +17,11 @@ const splineSans = Spline_Sans({
 import dr from "public/images/PHOTO_1.jpg";
 import beau from "public/beau-headshot.webp";
 import brennan from "public/brennan-headshot.png";
-import diane from "public/diane-headshot.webp";
 import brittany from "public/Brittany-headshot.jpeg";
 import matt from "public/matt-headshot.png";
 import kristina from "public/kristina-headshot.png";
-import tyler from "public/drtyler.webp";
+import evan from "public/DrEvan.jpg"
+import hunter from "public/DrHunter.jpg"
 
 const testimonials = [
   {
@@ -182,13 +182,12 @@ export default function About() {
                   teamMemberName="dR. brennan riche"
                   teamMemberAbout="With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work."
                 />
-\
                 <TeamMember
-                  image={diane}
-                  alt="Diane Shepherd"
-                  teamMemberRole="functional nutrition & lifestyle practitioner"
-                  teamMemberName="diane shepherd"
-                  teamMemberAbout="As a former gymnast, cheerleader and marathon runner, Diane has a lifelong interest in health, wellness and fitness. She loves helping people build and maintain a strong foundation."
+                  image={evan}
+                  alt="Doctor Evan"
+                  teamMemberRole="practitioner"
+                  teamMemberName="dR. Evan Hall"
+                  teamMemberAbout="Evan Hall, an accomplished triathlete and runner utilizes his background and passions to cater to patient care. He uses a strong emphasis on soft tissue work and dry needling with e-stim when treating patients."
                 />
                 <TeamMember
                   image={brittany}
@@ -214,9 +213,16 @@ export default function About() {
                   alt="Doctor Kristina"
                   teamMemberRole="Practitioner & Director of Marketing"
                   teamMemberName="dR. kristina myles"
-                  teamMemberAbout="Dr. Kristina Myles, a Certified Chiropractic Sports Practitioner®, excels in resolving injuries through soft tissue techniques and dry needling with an extensive athletic background. 
-              "
+                  teamMemberAbout="Dr. Kristina Myles, a Certified Chiropractic Sports Practitioner®, excels in resolving injuries through soft tissue techniques and dry needling with an extensive athletic background."
                 />
+                <TeamMember
+                  image={hunter}
+                  alt="Doctor Hunter"
+                  teamMemberRole="Practitioner"
+                  teamMemberName="dR. Hunter Fritz"
+                  teamMemberAbout="Hunter graduated from Texas Tech in 2020 with a Bachelor’s degree in Kinesiology and from Parker University in 2024. Since 2017, Hunter has worked with athletes of all ages, leveraging a deep understanding of sports and movement. With a lifelong passion for sports, starting at the age of 6, Hunter is committed to helping people return to their favorite activities pain-free and stronger than ever."
+                />
+                
                 <TeamMember
                   image={brittany}
                   alt="Brittany Gibson"
