@@ -20,8 +20,8 @@ import brennan from "public/brennan-headshot.png";
 import brittany from "public/Brittany-headshot.jpeg";
 import matt from "public/matt-headshot.png";
 import kristina from "public/kristina-headshot.png";
-import evan from "public/DrEvan.jpg"
-import hunter from "public/DrHunter.jpg"
+import evan from "public/DrEvan.JPG";
+import hunter from "public/DrHunter.JPG";
 
 const testimonials = [
   {
