@@ -10,6 +10,7 @@ import "../styles/treatments.scss";
 import { Spline_Sans } from "next/font/google";
 import header from "/public/TreatmentHeader.png";
 import TreatmentsGrid from "../components/TreatmentsGrid";
+import { trackBookAppointmentClick } from "../utils/analytics";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -18,6 +19,10 @@ const splineSans = Spline_Sans({
 });
 
 export default function Treatment() {
+  const handleBookAppointmentClick = () => {
+    trackBookAppointmentClick();
+  };
+
   return (
     <div>
       <Header />
@@ -45,6 +50,7 @@ export default function Treatment() {
                   href="https://kineticcentredallas.janeapp.com/"
                   target="_blank"
                   className="button dark"
+                  onClick={handleBookAppointmentClick}
                 >
                   Book an Appointment
                 </a>
@@ -82,6 +88,7 @@ export default function Treatment() {
                 href="https://kineticcentredallas.janeapp.com/"
                 target="_blank"
                 className="button dark"
+                onClick={handleBookAppointmentClick}
               >
                 Book a Consultation
               </a>

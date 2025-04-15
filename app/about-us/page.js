@@ -7,6 +7,7 @@ import { Spline_Sans } from "next/font/google";
 import TestimonialSlider from "../components/TestimonialSlider";
 import BottomBanner from "../components/BottomBanner";
 import "../styles/about.scss";
+import { trackBookAppointmentClick } from "../utils/analytics";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -51,6 +52,10 @@ const testimonials = [
   // Add more testimonials here
 ];
 export default function About() {
+  const handleBookAppointmentClick = () => {
+    trackBookAppointmentClick();
+  };
+
   return (
     <div>
       <Header />
@@ -71,6 +76,7 @@ export default function About() {
                 href="https://kineticcentredallas.janeapp.com/"
                 target="_blank"
                 className="button dark"
+                onClick={handleBookAppointmentClick}
               >
                 Book an Appointment
               </a>
@@ -220,7 +226,7 @@ export default function About() {
                   alt="Doctor Hunter"
                   teamMemberRole="Practitioner"
                   teamMemberName="dR. Hunter Fritz"
-                  teamMemberAbout="Hunter graduated from Texas Tech in 2020 with a Bachelor’s degree in Kinesiology and from Parker University in 2024. Since 2017, Hunter has worked with athletes of all ages, leveraging a deep understanding of sports and movement. With a lifelong passion for sports, starting at the age of 6, Hunter is committed to helping people return to their favorite activities pain-free and stronger than ever."
+                  teamMemberAbout="Hunter graduated from Texas Tech in 2020 with a Bachelor's degree in Kinesiology and from Parker University in 2024. Since 2017, Hunter has worked with athletes of all ages, leveraging a deep understanding of sports and movement. With a lifelong passion for sports, starting at the age of 6, Hunter is committed to helping people return to their favorite activities pain-free and stronger than ever."
                 />
                 
                 <TeamMember

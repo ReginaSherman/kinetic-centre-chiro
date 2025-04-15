@@ -8,6 +8,7 @@ import "../styles/resources.scss";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Image from "next/image";
 import { Spline_Sans } from "next/font/google";
+import { trackBookAppointmentClick } from "../utils/analytics";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -47,6 +48,10 @@ import header from "/public/resources-header.png";
 import VideoSlider from "../components/VideoSlider";
 
 export default function Resources() {
+  const handleBookAppointmentClick = () => {
+    trackBookAppointmentClick();
+  };
+
   return (
     <div>
       <Header />
@@ -77,6 +82,7 @@ export default function Resources() {
                   href="https://kineticcentredallas.janeapp.com/"
                   target="_blank"
                   className="button dark"
+                  onClick={handleBookAppointmentClick}
                 >
                   Book an Appointment
                 </a>

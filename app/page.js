@@ -46,6 +46,7 @@ import calIcon from "public/calIcon.svg";
 import mapIcon from "public/mapIcon.svg";
 import Carousel from "./components/Carousel";
 import Slider from "./components/Slider";
+import { trackBookAppointmentClick } from "./utils/analytics";
 
 const images = [
   {
@@ -133,6 +134,10 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const handleBookAppointmentClick = () => {
+    trackBookAppointmentClick();
+  };
+
   return (
     <div>
       <Header />
@@ -170,6 +175,7 @@ export default function Home() {
                   href="https://kineticcentredallas.janeapp.com/"
                   target="_blank"
                   className="button dark"
+                  onClick={handleBookAppointmentClick}
                 >
                   Book an Appointment
                 </a>
