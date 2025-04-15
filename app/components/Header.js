@@ -3,6 +3,7 @@ import "../styles/header.scss";
 import { useEffect, useState } from "react"; // Import useEffect to handle page activation
 import Image from "next/image";
 import Link from "next/link";
+import { trackBookNowClick } from "../utils/analytics";
 
 import smallLogo from "/public/kc-logo-small.svg";
 export default function Header() {
@@ -53,6 +54,10 @@ export default function Header() {
     }
   }, []);
 
+  const handleBookNowClick = () => {
+    trackBookNowClick();
+  };
+
   return (
     <header id="header" className={`header ${isMenuOpen ? "open" : ""}`}>
       <div className="wrapper">
@@ -99,6 +104,7 @@ export default function Header() {
                   href="https://kineticcentredallas.janeapp.com/"
                   target="_blank"
                   className="button dark"
+                  onClick={handleBookNowClick}
                 >
                   Book Now
                 </a>

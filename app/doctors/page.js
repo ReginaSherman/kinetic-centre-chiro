@@ -17,6 +17,7 @@ import kristina from "public/Dr.Myles.png";
 import brittany from "public/BrittanyPhoto.png";
 import tyler from "public/tyler.png"
 import play from "public/play-button.png";
+import { trackBookNowClick } from "../utils/analytics";
 
 const splineSans = Spline_Sans({
   weight: ["400", "600"],
@@ -99,6 +100,10 @@ export default function Doctors() {
     console.log(videoSrc);
   };
 
+  const handleBookNowClick = () => {
+    trackBookNowClick();
+  };
+
   return (
     <div>
       <Header />
@@ -145,6 +150,7 @@ export default function Doctors() {
                       href={doctor.bookLink}
                       target="_blank"
                       className="button dark"
+                      onClick={handleBookNowClick}
                     >
                       Book Now
                     </a>

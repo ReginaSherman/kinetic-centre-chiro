@@ -15,6 +15,7 @@ import slideImage10 from "public/images/PHOTO_9.jpg";
 import slideImage11 from "public/images/PHOTO_10.jpg";
 import slideImage12 from "public/images/photo11.png";
 import slideImage13 from "public/images/photo12.jpg";
+import { trackBookNowClick } from "../utils/analytics";
 
 const images = [
   {
@@ -85,6 +86,10 @@ const images = [
 ];
 
 export default function TreatmentsGrid() {
+  const handleBookNowClick = () => {
+    trackBookNowClick();
+  };
+
   return (
     <div className="treatments-grid">
       {images.map((image, index) => (
@@ -101,6 +106,7 @@ export default function TreatmentsGrid() {
                 href="https://kineticcentredallas.janeapp.com/"
                 target="_blank"
                 className="button dark"
+                onClick={handleBookNowClick}
               >
                 Book Now
               </a>

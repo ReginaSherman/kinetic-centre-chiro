@@ -3,6 +3,7 @@ import { register } from "swiper/element/bundle";
 import "../styles/TreatmentSlider.scss";
 
 import Image from "next/image";
+import { trackBookNowClick } from "../utils/analytics";
 
 register();
 
@@ -43,6 +44,10 @@ export default function Slider({ images }) {
     // });
   }, []);
 
+  const handleBookNowClick = () => {
+    trackBookNowClick();
+  };
+
   return (
     <div className="treatment-slider">
       <swiper-container
@@ -67,6 +72,7 @@ export default function Slider({ images }) {
                   href="https://kineticcentredallas.janeapp.com/"
                   target="_blank"
                   className="button dark"
+                  onClick={handleBookNowClick}
                 >
                   Book Now
                 </a>
