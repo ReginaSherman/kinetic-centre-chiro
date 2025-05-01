@@ -101,7 +101,8 @@ const doctorsData = [
     title: "Practitioner",
     description:
       "Dr. Cooper Adams turned his own back injury into a passion for chiropractic care. With a background in sports and advanced training in rehab techniques, he helps patients stay active and pain-free. Based in Denver, he's also an outdoor enthusiast and family man.",
-    imageSrc: cooper,
+      bookLink: "https://kineticcentreusa.janeapp.com",
+      imageSrc: cooper,
     },
   {
     name: "Dr. Grant Smith",
@@ -117,9 +118,25 @@ const doctorsData = [
 export default function Doctors() {
   const [open, setOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState("");
-  // const [videoType, setVideoType] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [toggler, setToggler] = useState(false);
+  const [showLocationDropdown, setShowLocationDropdown] = useState(false);
+
+  const bookingLocations = [
+    {
+      name: "Kinetic Centre Dallas",
+      link: "https://kineticcentredallas.janeapp.com/"
+    },
+    {
+      name: "Kinetic Centre Denver",
+      link: "https://kineticcentreusa.janeapp.com/"
+    }
+  ];
+
+  const handleLocationSelect = (link) => {
+    window.open(link, '_blank');
+    setShowLocationDropdown(false);
+  };
 
   const openLightbox = (videoSrc) => {
     setToggler(!toggler);
@@ -147,13 +164,34 @@ export default function Doctors() {
                 you to enjoy life pain-free. Please call 469-697-9545 to speak
                 with our team for more information about scheduling.
               </p>
-              <a
-                href="https://kineticcentredallas.janeapp.com/"
-                target="_blank"
-                className="button dark"
-              >
-                Book an Appointment
-              </a>
+              <div className="booking-dropdown">
+                <button 
+                  className="button dark"
+                  onClick={() => setShowLocationDropdown(!showLocationDropdown)}
+                  aria-expanded={showLocationDropdown}
+                  aria-controls="location-dropdown"
+                >
+                  Book an Appointment
+                </button>
+                {showLocationDropdown && (
+                  <div 
+                    id="location-dropdown"
+                    className="dropdown-content"
+                    role="menu"
+                  >
+                    {bookingLocations.map((location, index) => (
+                      <button
+                        key={index}
+                        className="dropdown-item"
+                        onClick={() => handleLocationSelect(location.link)}
+                        role="menuitem"
+                      >
+                        {location.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
