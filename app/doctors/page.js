@@ -17,6 +17,9 @@ import kristina from "public/Dr.Myles.png";
 import brittany from "public/BrittanyPhoto.png";
 import tyler from "public/tyler.png"
 import play from "public/play-button.png";
+import grant from "public/grant-full.png"
+import sonia from "public/sonia-full.png"
+import cooper from "public/cooper-full.png"
 import { trackBookNowClick } from "../utils/analytics";
 
 const splineSans = Spline_Sans({
@@ -84,6 +87,31 @@ const doctorsData = [
     instagram: "https://www.instagram.com/3dmt_brittany/",
     facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
   },
+  {
+    name: "Dr. Sonia Garcia",
+    title: "Practitioner",
+    description:
+      "Dr. Sonia Garcia is a skilled chiropractor at Kinetic Centre Denver, with a passion for helping patients achieve optimal movement and wellness.",
+      bookLink: "https://kineticcentreusa.janeapp.com",
+      imageSrc: sonia,
+
+  },
+  {
+    name: "Dr. Cooper Adams",
+    title: "Practitioner",
+    description:
+      "Dr. Cooper Adams turned his own back injury into a passion for chiropractic care. With a background in sports and advanced training in rehab techniques, he helps patients stay active and pain-free. Based in Denver, he's also an outdoor enthusiast and family man.",
+    imageSrc: cooper,
+    },
+  {
+    name: "Dr. Grant Smith",
+    title: "Practitioner",
+    description:
+      "Dr. Grant Smith is a Colorado chiropractor specializing in functional movement, soft tissue work, and sports rehab. With degrees from CU and Parker University, he blends biomechanics and chiropractic care to treat the root cause of pain and improve performance.",
+      bookLink: "https://kineticcentreusa.janeapp.com",
+    imageSrc: grant,
+    },
+  
 ];
 
 export default function Doctors() {
@@ -154,24 +182,28 @@ export default function Doctors() {
                     >
                       Book Now
                     </a>
-                    {doctor.videoSrc ?                     
-                    <button
-                      type="button"
-                      className="button light"
-                      onClick={() => openLightbox(doctor.videoSrc)}
-                    >
-                      View Bio{" "}
-                      <Image className="play-button" src={play} alt="alt" />
-                    </button> 
-                    : '' }
+                    {doctor.videoSrc && (
+                      <button
+                        type="button"
+                        className="button light"
+                        onClick={() => openLightbox(doctor.videoSrc)}
+                      >
+                        View Bio{" "}
+                        <Image className="play-button" src={play} alt="alt" />
+                      </button>
+                    )}
 
                     <div className="socials-container">
-                      <Link href={doctor.instagram} target="_blank">
-                        <Image src={instagram} alt="instagram" />
-                      </Link>
-                      <Link href={doctor.facebook} target='_blank'>
-                        <Image src={facebook} alt="facebook" />
-                      </Link>
+                      {doctor.instagram && (
+                        <Link href={doctor.instagram} target="_blank">
+                          <Image src={instagram} alt="instagram" />
+                        </Link>
+                      )}
+                      {doctor.facebook && (
+                        <Link href={doctor.facebook} target='_blank'>
+                          <Image src={facebook} alt="facebook" />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
