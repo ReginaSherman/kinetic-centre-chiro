@@ -1,0 +1,15 @@
+.map-container {
+  width: 100vw;
+  height: 145vh;
+  position: relative;
+
+  @media (max-width: 768px) {
+    height: 80vh;
+  }
+
+  // Ensure the Google Map takes up the full container space
+  > div {
+    width: 100% !important;
+    height: 100% !important;
+  }
+} 

@@ -7,6 +7,7 @@ import FsLightbox from "fslightbox-react";
 import { Spline_Sans } from "next/font/google";
 import "../styles/doctors.scss";
 import BottomBanner from "../components/BottomBanner";
+import BookingModal from "../components/BookingModal";
 
 import Image from "next/image";
 
@@ -34,7 +35,7 @@ const doctorsData = [
     title: "CEO of Kinetic Centres & Practitioner",
     description:
       "Dr. Sauls is the leading Kinetisense expert in the US and specializes in the Kinetisense Advanced Movement Screening and treatments/rehab to help improve areas of dysfunction.",
-    bookLink: "https://kineticcentredallas.janeapp.com/",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/1",
     videoSrc: "https://www.youtube.com/watch?v=pPr8_pLSyuM", // Replace with the actual video source
     imageSrc: beau,
     instagram: "https://www.instagram.com/the3ddoc/",
@@ -81,7 +82,7 @@ const doctorsData = [
     title: "sports massage therapist",
     description:
       "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. ",
-    bookLink: "https://kineticcentredallas.janeapp.com/",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/19",
     videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
     imageSrc: brittany,
     instagram: "https://www.instagram.com/3dmt_brittany/",
@@ -92,7 +93,7 @@ const doctorsData = [
     title: "Practitioner",
     description:
       "Dr. Sonia Garcia is a skilled chiropractor at Kinetic Centre Denver, with a passion for helping patients achieve optimal movement and wellness.",
-      bookLink: "https://kineticcentreusa.janeapp.com",
+      bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/3",
       imageSrc: sonia,
 
   },
@@ -101,7 +102,7 @@ const doctorsData = [
     title: "Practitioner",
     description:
       "Dr. Cooper Adams turned his own back injury into a passion for chiropractic care. With a background in sports and advanced training in rehab techniques, he helps patients stay active and pain-free. Based in Denver, he's also an outdoor enthusiast and family man.",
-      bookLink: "https://kineticcentreusa.janeapp.com",
+      bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/4",
       imageSrc: cooper,
     },
   {
@@ -109,7 +110,7 @@ const doctorsData = [
     title: "Practitioner",
     description:
       "Dr. Grant Smith is a Colorado chiropractor specializing in functional movement, soft tissue work, and sports rehab. With degrees from CU and Parker University, he blends biomechanics and chiropractic care to treat the root cause of pain and improve performance.",
-      bookLink: "https://kineticcentreusa.janeapp.com",
+      bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/1",
     imageSrc: grant,
     },
   
@@ -120,23 +121,7 @@ export default function Doctors() {
   const [videoSrc, setVideoSrc] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [toggler, setToggler] = useState(false);
-  const [showLocationDropdown, setShowLocationDropdown] = useState(false);
-
-  const bookingLocations = [
-    {
-      name: "Kinetic Centre Dallas",
-      link: "https://kineticcentredallas.janeapp.com/"
-    },
-    {
-      name: "Kinetic Centre Denver",
-      link: "https://kineticcentreusa.janeapp.com/"
-    }
-  ];
-
-  const handleLocationSelect = (link) => {
-    window.open(link, '_blank');
-    setShowLocationDropdown(false);
-  };
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const openLightbox = (videoSrc) => {
     setToggler(!toggler);
@@ -147,6 +132,11 @@ export default function Doctors() {
 
   const handleBookNowClick = () => {
     trackBookNowClick();
+  };
+
+  const handleMainBookClick = () => {
+    trackBookNowClick();
+    setModalOpen(true);
   };
 
   return (
@@ -164,34 +154,12 @@ export default function Doctors() {
                 you to enjoy life pain-free. Please call 469-697-9545 to speak
                 with our team for more information about scheduling.
               </p>
-              <div className="booking-dropdown">
-                <button 
-                  className="button dark"
-                  onClick={() => setShowLocationDropdown(!showLocationDropdown)}
-                  aria-expanded={showLocationDropdown}
-                  aria-controls="location-dropdown"
-                >
-                  Book an Appointment
-                </button>
-                {showLocationDropdown && (
-                  <div 
-                    id="location-dropdown"
-                    className="dropdown-content"
-                    role="menu"
-                  >
-                    {bookingLocations.map((location, index) => (
-                      <button
-                        key={index}
-                        className="dropdown-item"
-                        onClick={() => handleLocationSelect(location.link)}
-                        role="menuitem"
-                      >
-                        {location.name}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <button 
+                className="button dark"
+                onClick={handleMainBookClick}
+              >
+                Book an Appointment
+              </button>
             </div>
           </div>
         </div>
@@ -253,7 +221,10 @@ export default function Doctors() {
         <BottomBanner />
       </main>
       <Footer />
-
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
       <FsLightbox toggler={toggler} sources={[videoSrc]} />
     </div>
   );

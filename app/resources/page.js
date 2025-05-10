@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/resources.scss";
+import BookingModal from "../components/BookingModal";
 
 import TestimonialSlider from "../components/TestimonialSlider";
 import Image from "next/image";
@@ -48,8 +49,11 @@ import header from "/public/resources-header.png";
 import VideoSlider from "../components/VideoSlider";
 
 export default function Resources() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const handleBookAppointmentClick = () => {
     trackBookAppointmentClick();
+    setModalOpen(true);
   };
 
   return (
@@ -78,14 +82,12 @@ export default function Resources() {
                 >
                   Hear from our Patients
                 </a>
-                <a
-                  href="https://kineticcentredallas.janeapp.com/"
-                  target="_blank"
+                <button
                   className="button dark"
                   onClick={handleBookAppointmentClick}
                 >
                   Book an Appointment
-                </a>
+                </button>
               </div>
               <div className="right-side">
                 <div className="image-container">
@@ -169,6 +171,10 @@ export default function Resources() {
         </section>
       </main>
       <Footer />
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
     </div>
   );
 }

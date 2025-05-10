@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { register } from "swiper/element/bundle";
 import "../styles/TreatmentSlider.scss";
+import BookingModal from "./BookingModal";
 
 import Image from "next/image";
 import { trackBookNowClick } from "../utils/analytics";
@@ -9,7 +10,7 @@ register();
 
 export default function Slider({ images }) {
   const swiperElRef = useRef(null);
-
+  const [isModalOpen, setModalOpen] = useState(false);
   const [slidesPerView, setSlidesPerView] = useState(4);
 
   useEffect(() => {
@@ -46,6 +47,7 @@ export default function Slider({ images }) {
 
   const handleBookNowClick = () => {
     trackBookNowClick();
+    setModalOpen(true);
   };
 
   return (
@@ -68,19 +70,21 @@ export default function Slider({ images }) {
                   <h2>{image.title}</h2>
                   <p className="fade-description">{image.description}</p>
                 </div>
-                <a
-                  href="https://kineticcentredallas.janeapp.com/"
-                  target="_blank"
+                <button
                   className="button dark"
                   onClick={handleBookNowClick}
                 >
                   Book Now
-                </a>
+                </button>
               </div>
             </div>
           </swiper-slide>
         ))}
       </swiper-container>
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
     </div>
   );
 }

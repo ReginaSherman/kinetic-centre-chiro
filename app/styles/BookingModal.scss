@@ -1,0 +1,104 @@
+@import "mixins";
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: $white;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: modalFadeIn 0.3s ease-out;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: $black;
+    font-size: 28px;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: $black;
+  padding: 5px;
+  line-height: 1;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.location-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .location-button {
+    display: block;
+    padding: 15px 20px;
+    background: $black-gradient;
+    color: $white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    border: 3px solid $black;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $green-gradient;
+      border-color: $green;
+    }
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@include devices(mobile) {
+  .modal-content {
+    padding: 30px 20px;
+    
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  .location-buttons {
+    .location-button {
+      font-size: 16px;
+      padding: 12px 15px;
+    }
+  }
+} 

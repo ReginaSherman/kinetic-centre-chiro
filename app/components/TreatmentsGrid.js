@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 
 import "../styles/TreatmentsGrid.scss";
@@ -15,6 +16,7 @@ import slideImage10 from "public/images/PHOTO_9.jpg";
 import slideImage11 from "public/images/PHOTO_10.jpg";
 import slideImage12 from "public/images/photo11.png";
 import slideImage13 from "public/images/photo12.jpg";
+import BookingModal from "./BookingModal";
 import { trackBookNowClick } from "../utils/analytics";
 
 const images = [
@@ -86,8 +88,11 @@ const images = [
 ];
 
 export default function TreatmentsGrid() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const handleBookNowClick = () => {
     trackBookNowClick();
+    setModalOpen(true);
   };
 
   return (
@@ -102,18 +107,20 @@ export default function TreatmentsGrid() {
                 <h2>{image.title}</h2>
                 <p className="fade-description">{image.description}</p>
               </div>
-              <a
-                href="https://kineticcentredallas.janeapp.com/"
-                target="_blank"
+              <button
                 className="button dark"
                 onClick={handleBookNowClick}
               >
                 Book Now
-              </a>
+              </button>
             </div>
           </div>
         </div>
       ))}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
     </div>
   );
 }

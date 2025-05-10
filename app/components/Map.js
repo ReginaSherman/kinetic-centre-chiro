@@ -1,3 +1,4 @@
+import React from "react";
 import {
   GoogleMap,
   useJsApiLoader,
@@ -5,10 +6,11 @@ import {
   InfoBox,
 } from "@react-google-maps/api";
 import { useCallback, useState, useEffect } from "react";
+import "../styles/map.scss";
 
 const containerStyle = {
-  width: "100vw",
-  height: "115vh",
+  width: "100%",
+  height: "100%",
 };
 
 const center = {
@@ -26,10 +28,20 @@ const marker_2 = {
   lng: -96.8318695,
 };
 const content = "lorem ipsum";
+
+const options = {
+  disableDefaultUI: true,
+  clickableIcons: false,
+  scrollwheel: false,
+};
+
+const libraries = ["places"];
+
 export default function Map() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.NEXT_PUBLIC_googleMapsApiKey,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    libraries,
   });
 
   const [map, setMap] = useState(null);
@@ -54,18 +66,19 @@ export default function Map() {
   }, [map]);
 
   return isLoaded ? (
-    <>
+    <div className="map-container">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
         zoom={zoom}
         onLoad={onLoad}
         onUnmount={onUnmount}
+        options={options}
       >
         <Marker position={marker_1} label='Kinetic Centre Dallas'/>
         <Marker position={marker_2} label='Kinetic Centre Frisco'/>
       </GoogleMap>
-    </>
+    </div>
   ) : (
     <></>
   );

@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import BookingModal from "../components/BookingModal";
 
 import Image from "next/image";
 import "../styles/treatments.scss";
@@ -19,8 +20,11 @@ const splineSans = Spline_Sans({
 });
 
 export default function Treatment() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const handleBookAppointmentClick = () => {
     trackBookAppointmentClick();
+    setModalOpen(true);
   };
 
   return (
@@ -46,14 +50,12 @@ export default function Treatment() {
                   Have questions?{" "}
                   <span className="green">Call us at 469-697-9545</span>
                 </p>
-                <a
-                  href="https://kineticcentredallas.janeapp.com/"
-                  target="_blank"
+                <button
                   className="button dark"
                   onClick={handleBookAppointmentClick}
                 >
                   Book an Appointment
-                </a>
+                </button>
               </div>
               <div className="right-side">
                 <div className="image-container">
@@ -84,19 +86,21 @@ export default function Treatment() {
               <p className="description">
                 BOOK A CONSULTATION WITH OUR EXPERTS
               </p>
-              <a
-                href="https://kineticcentredallas.janeapp.com/"
-                target="_blank"
+              <button
                 className="button dark"
                 onClick={handleBookAppointmentClick}
               >
                 Book a Consultation
-              </a>
+              </button>
             </div>
           </div>
         </section>
       </main>
       <Footer />
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
     </div>
   );
 }

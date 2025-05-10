@@ -15,6 +15,7 @@ import TreatmentSlider from "./components/TreatmentSlider";
 import TestimonialSlider from "./components/TestimonialSlider";
 import Map from "./components/Map";
 import BottomBanner from "./components/BottomBanner";
+import BookingModal from "./components/BookingModal";
 
 import "./styles/home.scss";
 import "./styles/globals.scss";
@@ -134,8 +135,11 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const handleBookAppointmentClick = () => {
     trackBookAppointmentClick();
+    setModalOpen(true);
   };
 
   return (
@@ -171,14 +175,12 @@ export default function Home() {
                   Have questions?{" "}
                   <span className="green">Call us at 469-697-9545</span>
                 </p>
-                <a
-                  href="https://kineticcentredallas.janeapp.com/"
-                  target="_blank"
+                <button
                   className="button dark"
                   onClick={handleBookAppointmentClick}
                 >
                   Book an Appointment
-                </a>
+                </button>
               </div>
               <div className="right-side">
                 <div className="image-container">
@@ -300,12 +302,46 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            <div className="denver location">
+              <div className="location-text">
+                <h2 className="uppercase">DENVER LOCATION</h2>
+                <p className={`address + ${splineSans.className}`}>
+                  4949 S Syracuse St <br />
+                  Ste 375 <br />
+                  Denver, CO 80237 <br />
+                  (469) 697-9545 <br />
+                </p>
+              </div>
+
+              <div className="cta-block">
+                <a
+                  href="https://kineticcentreusa.janeapp.com"
+                  target="_blank"
+                  className="button dark"
+                >
+                  <Image className="icon" src={calIcon} alt="cal" />
+                  Schedule Appointment
+                </a>
+                <a
+                  href="https://maps.google.com/?saddr=My%20Location&daddr=Kinetic+Centre+Denver+4949+S+Syracuse+St+Ste+375+Denver+CO+80237"
+                  target="_blank"
+                  className="button dark"
+                >
+                  <Image className="icon" src={mapIcon} alt="map" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
           </div>
           <Map />
         </section>
         <BottomBanner />
       </main>
       <Footer />
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
     </div>
   );
 }

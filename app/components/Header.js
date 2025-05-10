@@ -4,10 +4,13 @@ import { useEffect, useState } from "react"; // Import useEffect to handle page 
 import Image from "next/image";
 import Link from "next/link";
 import { trackBookNowClick } from "../utils/analytics";
+import BookingModal from "./BookingModal";
 
 import smallLogo from "/public/kc-logo-small.svg";
+
 export default function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleMenu = () => {
     console.log('clicked')
@@ -56,6 +59,7 @@ export default function Header() {
 
   const handleBookNowClick = () => {
     trackBookNowClick();
+    setModalOpen(true);
   };
 
   return (
@@ -100,14 +104,12 @@ export default function Header() {
             </li>
             <li className="list-item">
               <div className="buttons-container flex-row">
-                <a
-                  href="https://kineticcentredallas.janeapp.com/"
-                  target="_blank"
+                <button
                   className="button dark"
                   onClick={handleBookNowClick}
                 >
                   Book Now
-                </a>
+                </button>
                 <a
                   href="https://kineticcentredallas.janeapp.com/login"
                   target="_blank"
@@ -120,6 +122,10 @@ export default function Header() {
           </ul>
         </nav>
       </div>
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setModalOpen(false)} 
+      />
     </header>
   );
 }
