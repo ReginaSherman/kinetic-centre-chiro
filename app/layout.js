@@ -24,6 +24,21 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         {/* End Google Tag Manager */}
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1KFPE54JS7"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1KFPE54JS7');
+          `}
+        </Script>
+        {/* End Google Analytics */}
       </head>
       <body className={roboto.className}>
         {/* Google Tag Manager (noscript) */}
