@@ -9,15 +9,10 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
     prependData: `@import "variables.scss";`,
   },
-  // Fix for Node.js 22 font loading issues
-  experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
-  },
-  // Allow external font domains
+  // Allow external font domains and handle problematic images
   images: {
     domains: ['fonts.gstatic.com'],
+    unoptimized: true, // Disable image optimization to avoid EXIF issues
   },
   // Headers for font loading
   async headers() {

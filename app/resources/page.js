@@ -8,16 +8,9 @@ import BookingModal from "../components/BookingModal";
 
 import TestimonialSlider from "../components/TestimonialSlider";
 import Image from "next/image";
-import { Spline_Sans } from "next/font/google";
+// Using CSS font import instead of Next.js font optimization
 import { trackBookAppointmentClick } from "../utils/analytics";
 
-const splineSans = Spline_Sans({
-  weight: ["400", "600"],
-  preload: false,
-  variable: "--font-spline",
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
-});
 
 const testimonials = [
   {
@@ -68,7 +61,7 @@ export default function Resources() {
               <div className="left-side">
                 <div className="left-border">
                   <h2 className="h2 uppercase">A LITTLE ABOUT US</h2>
-                  <p className={`description + ${splineSans.className}`}>
+                  <p className="description font-spline">
                     The goal of Kinetic Centre USA is to partner with you in
                     improving your functional movement. Our practitioners will
                     provide treatment for you and prescribe functional rehab

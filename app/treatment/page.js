@@ -8,18 +8,11 @@ import BookingModal from "../components/BookingModal";
 import Image from "next/image";
 import "../styles/treatments.scss";
 
-import { Spline_Sans } from "next/font/google";
+// Using CSS font import instead of Next.js font optimization
 import header from "/public/TreatmentHeader.png";
 import TreatmentsGrid from "../components/TreatmentsGrid";
 import { trackBookAppointmentClick } from "../utils/analytics";
 
-const splineSans = Spline_Sans({
-  weight: ["400", "600"],
-  preload: false,
-  variable: "--font-spline",
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
-});
 
 export default function Treatment() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -39,7 +32,7 @@ export default function Treatment() {
               <div className="left-side">
                 <div className="left-border">
                   <h2 className="h2 uppercase">TREATMENTS & sERVICES</h2>
-                  <p className={`description + ${splineSans.className}`}>
+                  <p className="description font-spline">
                     Kinetic Centre USA is powered by Kinetisense, the 3D
                     functional movement analysis technology. Our goal is to
                     provide you the same level of treatment, rehab, technology,
@@ -48,7 +41,7 @@ export default function Treatment() {
                   </p>
                 </div>
 
-                <p className={`superscript + ${splineSans.className}`}>
+                <p className="superscript font-spline">
                   Have questions?{" "}
                   <span className="green">Call us at 469-697-9545</span>
                 </p>

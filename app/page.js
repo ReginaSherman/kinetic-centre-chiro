@@ -23,15 +23,7 @@ import "./styles/globals.scss";
 
 import logo from "/public/KineticCentreLogo.png";
 import dr from "/public/DRPHOTO.png";
-import { Spline_Sans } from "next/font/google";
-
-const splineSans = Spline_Sans({
-  weight: ["400", "600"],
-  preload: false,
-  variable: "--font-spline",
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
-});
+// Using CSS font import instead of Next.js font optimization
 
 import slideImage1 from "public/images/PHOTO.jpg";
 import slideImage2 from "public/images/PHOTO_1.jpg";
@@ -165,7 +157,7 @@ export default function Home() {
                   <h2 className="h2 uppercase">
                     HELPING YOU STAY ACTIVE AND PAIN FREE
                   </h2>
-                  <p className={`description + ${splineSans.className}`}>
+                  <p className="description font-spline">
                     Kinetic Centre USA is a multidisciplinary facility that
                     provides advanced assessment, treatment and rehab. Kinetic
                     Centre Practitioners help you feel and move better using
@@ -173,7 +165,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <p className={`superscript + ${splineSans.className}`}>
+                <p className="superscript font-spline">
                   Have questions?{" "}
                   <span className="green">Call us at 469-697-9545</span>
                 </p>
@@ -203,7 +195,7 @@ export default function Home() {
           <div className="wrapper">
             <div className="text-container">
               <h2 className="h2 uppercase">Treatments & Services</h2>
-              <p className={`description + ${splineSans.className}`}>
+              <p className="description font-spline">
                 The clinic is powered by Kinetisense, the 3D functional movement
                 analysis technology. Our goal is to provide you the same level
                 of treatment, rehab, technology, assessment and advanced
@@ -248,7 +240,7 @@ export default function Home() {
             <div className="dallas location">
               <div className="location-text">
                 <h2 className="uppercase">dALLAS lOCATION</h2>
-                <p className={`address + ${splineSans.className}`}>
+                <p className="address font-spline">
                   17740 Preston Rd <br />
                   Suite 150 <br />
                   Dallas, TX 75252 <br />
@@ -277,7 +269,7 @@ export default function Home() {
             <div className="frisco location">
               <div className="location-text">
                 <h2 className="uppercase">FRISCO LOCATION</h2>
-                <p className={`address + ${splineSans.className}`}>
+                <p className="address font-spline">
                   6155 Sports Village Rd <br />
                   Suite 500 <br />
                   Frisco, TX 75033 <br />
@@ -307,7 +299,7 @@ export default function Home() {
             <div className="denver location">
               <div className="location-text">
                 <h2 className="uppercase">DENVER LOCATION</h2>
-                <p className={`address + ${splineSans.className}`}>
+                <p className="address font-spline">
                   4949 S Syracuse St <br />
                   Ste 375 <br />
                   Denver, CO 80237 <br />

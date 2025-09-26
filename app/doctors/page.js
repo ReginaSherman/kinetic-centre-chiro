@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FsLightbox from "fslightbox-react";
-import { Spline_Sans } from "next/font/google";
+// Using CSS font import instead of Next.js font optimization
 import "../styles/doctors.scss";
 import BottomBanner from "../components/BottomBanner";
 import BookingModal from "../components/BookingModal";
@@ -22,13 +22,6 @@ import grant from "public/grant-full.png"
 import sonia from "public/sonia-full.png"
 import { trackBookNowClick } from "../utils/analytics";
 
-const splineSans = Spline_Sans({
-  weight: ["400", "600"],
-  preload: false,
-  variable: "--font-spline",
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
-});
 
 const doctorsData = [
   {
@@ -142,7 +135,7 @@ export default function Doctors() {
               <h2 className="h2 uppercase">
                 our practitioners - elite & DETERMINED
               </h2>
-              <p className={`description + ${splineSans.className}`}>
+              <p className="description font-spline">
                 We are committed to providing patient-focused care that allows
                 you to enjoy life pain-free. Please call 469-697-9545 to speak
                 with our team for more information about scheduling.

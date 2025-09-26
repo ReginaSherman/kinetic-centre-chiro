@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Spline_Sans } from "next/font/google";
+// Using CSS font import instead of Next.js font optimization
 import BookingModal from "../components/BookingModal";
 
 import TestimonialSlider from "../components/TestimonialSlider";
@@ -10,16 +10,11 @@ import BottomBanner from "../components/BottomBanner";
 import "../styles/about.scss";
 import { trackBookAppointmentClick } from "../utils/analytics";
 
-const splineSans = Spline_Sans({ 
-  subsets: ['latin'],
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
-});
 
 import dr from "public/images/PHOTO_1.jpg";
 import beau from "public/beau-headshot.webp";
 import brennan from "public/brennan-headshot.png";
-import brittany from "public/Brittany-headshot.jpeg";
+import brittany from "public/Brittany-headshot.png";
 import matt from "public/matt-headshot.png";
 import kristina from "public/kristina-headshot.png";
 import evan from "public/DrEvan.JPG";
@@ -70,7 +65,7 @@ export default function About() {
           <div className="wrapper">
             <div className="hero-text">
               <h2 className="h2 uppercase">WHAT WE STAND FOR</h2>
-              <p className={`description ${splineSans.className}`}>
+              <p className="description font-spline">
                 The mission of Kinetic Centre is to provide premium, thorough,
                 and objective care led by evidence based practices to treat the
                 cause of dysfunction.
