@@ -1,6 +1,7 @@
 @import "mixins";
 .homepage {
   position: relative;
+  background-color: $gray;
   &-hero {
     margin-bottom: 40px;
     overflow-x: hidden;
