@@ -20,7 +20,6 @@ import tyler from "public/tyler.png"
 import play from "public/play-button.png";
 import grant from "public/grant-full.png"
 import sonia from "public/sonia-full.png"
-import cooper from "public/cooper-full.png"
 import { trackBookNowClick } from "../utils/analytics";
 
 const splineSans = Spline_Sans({
@@ -97,14 +96,6 @@ const doctorsData = [
       imageSrc: sonia,
 
   },
-  {
-    name: "Dr. Cooper Adams",
-    title: "Practitioner",
-    description:
-      "Dr. Cooper Adams turned his own back injury into a passion for chiropractic care. With a background in sports and advanced training in rehab techniques, he helps patients stay active and pain-free. Based in Denver, he's also an outdoor enthusiast and family man.",
-      bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/4",
-      imageSrc: cooper,
-    },
   {
     name: "Dr. Grant Smith",
     title: "Practitioner",

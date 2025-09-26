@@ -22,7 +22,6 @@ import evan from "public/DrEvan.JPG";
 import hunter from "public/DrHunter.JPG";
 import sonia from "public/sonia-headshot.png";
 import grant from "public/grant-headshot.jpeg";
-import cooper from "public/cooper-headshot.jpeg";
 
 const testimonials = [
   {
@@ -256,18 +255,6 @@ While not in the clinic, Dr. Smith leads an active lifestyle filled with golf, l
                   teamMemberRole="Practitioner"
                   teamMemberName="dR. sonia Garcia"
                   teamMemberAbout="Dr. Sonia Garcia is a skilled chiropractor at Kinetic Centre Denver, with a passion for helping patients achieve optimal movement and wellness. Holding a Master's in Sports Medicine alongside her Doctor of Chiropractic degree, she blends advanced knowledge and expertise to assess and treat a wide range of musculoskeletal conditions. Dr. Garcia addresses the root causes of discomfort by utilizing functional movement technology to analyze and understand her patients' movements. With a personal background in injury rehabilitation, she specializes in both injury prevention and recovery, guiding her patients toward lasting health and performance improvements."
-                />
-                
-                <TeamMember
-                  image={cooper}
-                  alt="Doctor Cooper"
-                  teamMemberRole="Practitioner"
-                  teamMemberName="Dr. Cooper Adams"
-                  teamMemberAbout="Dr. Cooper Adams' personal experience with treating his own lower back injury was the catalyst for his pursuit of a career in chiropractic care. As an athlete, he understands firsthand the challenges of injury and the journey to recovery. He began his studies in athletic training and rehabilitation at Hastings College, where he earned his Bachelor's degree in Biopsychology. During his time at Hastings, he was a member of both the college baseball and golf teams. Dr. Adams continued his education at the University of Western States in Portland, OR, where he obtained both a Master of Science in Sports Medicine and a Doctor of Chiropractic.
-
-Combining his clinical and personal experience in sports medicine and rehabilitation, Dr. Adams is dedicated to providing the highest level of care to his patients. He is passionate about helping individuals stay active and achieve their personal goals, whether that means returning to the sport they love, keeping up with their children, or navigating a pain-free workweek. Dr. Adams remains current with the latest scientific literature and treatment techniques to ensure optimal patient care. He is extensively trained in Active Release Technique (ART) and also proficient in McKenzie Diagnostic Technique, Neurodynamics Solutions, the Stuart McGill Method, Dynamic Neuromuscular Systems (DNS), and STECCO Fascial Manipulation.
-
-Originally from Eagle, Colorado, Dr. Adams now resides in Denver, CO with his wife, Chloe, and their son, Flynn. Outside of treating patients, he stays active with trail running, playing golf, hiking, cycling, rock climbing, snowboarding, fishing, camping, and running with his dog, Harper."
                 />
               </div>
             </div>
