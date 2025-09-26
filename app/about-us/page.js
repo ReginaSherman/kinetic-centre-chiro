@@ -10,7 +10,11 @@ import BottomBanner from "../components/BottomBanner";
 import "../styles/about.scss";
 import { trackBookAppointmentClick } from "../utils/analytics";
 
-const splineSans = Spline_Sans({ subsets: ["latin"] });
+const splineSans = Spline_Sans({ 
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+});
 
 import dr from "public/images/PHOTO_1.jpg";
 import beau from "public/beau-headshot.webp";

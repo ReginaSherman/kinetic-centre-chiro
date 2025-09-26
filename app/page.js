@@ -29,6 +29,8 @@ const splineSans = Spline_Sans({
   weight: ["400", "600"],
   preload: false,
   variable: "--font-spline",
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
 
 import slideImage1 from "public/images/PHOTO.jpg";
