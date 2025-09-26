@@ -1,7 +1,7 @@
 @import "mixins";
 .homepage {
   position: relative;
-  background-color: $gray;
+
   &-hero {
     margin-bottom: 40px;
     overflow-x: hidden;
@@ -142,6 +142,30 @@
       @include devices(mobile) {
         padding: 0;
       }
+    }
+  }
+
+  .as-seen-on {
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      @include devices(mobile) {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+    .gmt-logo {
+      width: 272px;
+      height: 134px;
+    }
+
+    iframe {
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      width: 100%;
     }
   }
 
