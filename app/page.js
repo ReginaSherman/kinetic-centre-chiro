@@ -328,7 +328,7 @@ export default function Home() {
                   4949 S Syracuse St <br />
                   Ste 375 <br />
                   Denver, CO 80237 <br />
-                  (469) 697-9545 <br />
+                  303-828-6463 <br />
                 </p>
               </div>
 
@@ -352,7 +352,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Map />
         </section>
         <BottomBanner />
       </main>

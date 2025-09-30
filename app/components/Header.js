@@ -47,14 +47,6 @@ export default function Header() {
         link.classList.add("active");
       }
     });
-    const logoContainer = document.querySelector(".logo-container");
-    if (logoContainer) {
-      if (isHomePage) {
-        logoContainer.classList.add("hide");
-      } else {
-        logoContainer.classList.remove("hide");
-      }
-    }
   }, []);
 
   const handleBookNowClick = () => {

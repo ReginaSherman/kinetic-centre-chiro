@@ -185,16 +185,16 @@
   }
 
   .map {
-    height: 145vh;
     position: relative;
     min-height: 850px;
+    background-color: $dark-gray;
 
     @include devices(mobile) {
       height: auto;
     }
 
     .locations {
-      position: absolute;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
