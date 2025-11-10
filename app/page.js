@@ -21,6 +21,8 @@ import "./styles/home.scss";
 import "./styles/globals.scss";
 // import "./styles/TreatmentSlider.module.scss";
 
+import gmtLogo from "/public/gmt-logo.svg";
+
 import logo from "/public/KineticCentreLogo.png";
 import dr from "/public/DRPHOTO.png";
 // Using CSS font import instead of Next.js font optimization
@@ -207,6 +209,29 @@ export default function Home() {
           <Slider images={images} />
         </section>
 
+        <section className="section as-seen-on">
+          <div className="wrapper">
+            <div className="header-wrapper">
+              <h2 className="h2 uppercase">As Seen On </h2>
+              <Image
+                className="gmt-logo"
+                src={gmtLogo}
+                width={272}
+                height={134}
+                alt="alt"
+              />
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/W4q29LNhllQ?si=uPnP5Ufi9K9KBAR9"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+
         <section className="section praise-ribbon">
           <div className="wrapper">
             <div className="praise-items">
@@ -303,7 +328,7 @@ export default function Home() {
                   4949 S Syracuse St <br />
                   Ste 375 <br />
                   Denver, CO 80237 <br />
-                  (469) 697-9545 <br />
+                  303-828-6463 <br />
                 </p>
               </div>
 
@@ -327,15 +352,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Map />
         </section>
         <BottomBanner />
       </main>
       <Footer />
-      <BookingModal 
-        isOpen={isModalOpen} 
-        onClose={() => setModalOpen(false)} 
-      />
+      <BookingModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }

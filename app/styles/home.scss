@@ -1,6 +1,7 @@
 @import "mixins";
 .homepage {
   position: relative;
+
   &-hero {
     margin-bottom: 40px;
     overflow-x: hidden;
@@ -144,6 +145,30 @@
     }
   }
 
+  .as-seen-on {
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      @include devices(mobile) {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+    .gmt-logo {
+      width: 272px;
+      height: 134px;
+    }
+
+    iframe {
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+  }
+
   .testimonials {
     .wrapper {
       display: flex;
@@ -160,16 +185,16 @@
   }
 
   .map {
-    height: 145vh;
     position: relative;
     min-height: 850px;
+    background-color: $dark-gray;
 
     @include devices(mobile) {
       height: auto;
     }
 
     .locations {
-      position: absolute;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
