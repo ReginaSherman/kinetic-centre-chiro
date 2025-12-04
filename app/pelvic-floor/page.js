@@ -111,7 +111,7 @@ export default function PelvicFloor() {
               <div className="left-border">
                 <h2 className="h2 uppercase">A Smarter Approach to Pelvic Health</h2>
                 <p className="description font-spline">
-                  We view the pelvic floor as part of a dynamic, interconnected system. That's why every session begins with a comprehensive functional movement assessment—allowing us to identify movement patterns, muscular imbalances, and compensations that influence pelvic floor function.
+                  We view the pelvic floor as part of a dynamic, interconnected system. That&apos;s why every session begins with a comprehensive functional movement assessment—allowing us to identify movement patterns, muscular imbalances, and compensations that influence pelvic floor function.
                 </p>
               </div>
             </div>
@@ -314,7 +314,7 @@ export default function PelvicFloor() {
               <div className="conversion-header">
                 <h2 className="h2 uppercase">Ready to Get Started?</h2>
                 <p className="description font-spline">
-                  Feel supported. Feel strong. Feel like yourself again. Whether you're recovering from injury or seeking better performance and comfort, our integrated approach helps you reconnect with your body in a powerful, sustainable way.
+                  Feel supported. Feel strong. Feel like yourself again. Whether you&apos;re recovering from injury or seeking better performance and comfort, our integrated approach helps you reconnect with your body in a powerful, sustainable way.
                 </p>
               </div>
               
@@ -339,7 +339,7 @@ export default function PelvicFloor() {
 
                 <div className="option form-option">
                   <h3 className="h3 uppercase">Have Questions?</h3>
-                  <p className="font-spline">Not ready to book yet? Leave your info and we'll reach out.</p>
+                  <p className="font-spline">Not ready to book yet? Leave your info and we&apos;ll reach out.</p>
                   <form className="lead-form" onSubmit={handleFormSubmit}>
                     {/* Honeypot field for spam protection - hidden from users */}
                     <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
