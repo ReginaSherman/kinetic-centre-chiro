@@ -78,6 +78,15 @@ export default function BookingModal({ isOpen, onClose }) {
           >
             Denver
           </a>
+          <a
+            href="https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book/#/staff_member/1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="location-button"
+            onClick={handleBookNowClick}
+          >
+            Pelvic Floor Therapy
+          </a>
         </div>
       </div>
     </div>

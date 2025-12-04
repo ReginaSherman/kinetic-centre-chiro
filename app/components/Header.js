@@ -21,7 +21,7 @@ export default function Header() {
   useEffect(() => {
     const pathname = window.location.pathname;
     const isHomePage = pathname === "/";
-    const isTreatmentPage = pathname === "/treatment";
+    const isTreatmentPage = pathname === "/treatment" || pathname === "/pelvic-floor";
     const isDoctorsPage = pathname === "/doctors";
     const isAboutUsPage = pathname === "/about-us";
     const isResourcesPage = pathname === "/resources";
@@ -74,10 +74,13 @@ export default function Header() {
                 home
               </a>
             </li>
-            <li className="list-item">
+            <li className="list-item has-dropdown">
               <a href="/treatment" className="nav-link">
                 treatments
               </a>
+              <div className="nav-dropdown">
+                <a href="/pelvic-floor">Pelvic Floor Therapy</a>
+              </div>
             </li>
             <li className="list-item">
               <a href="/doctors" className="nav-link">
