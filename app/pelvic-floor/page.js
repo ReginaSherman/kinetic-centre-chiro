@@ -99,11 +99,93 @@ export default function PelvicFloor() {
                 className="button dark"
                 onClick={handleBookAssessmentClick}
               >
-                Book an Assessment
+                BOOK A VIRTUAL OR IN-PERSON CONSULTATION
               </a>
             </div>
           </div>
         </div>
+
+        <section className="section lead-form-section">
+          <div className="wrapper">
+            <div className="lead-form-content">
+              <div className="form-text">
+                <h2 className="h2 uppercase">Have Questions?</h2>
+                <p className="description font-spline">
+                  Not ready to book yet? Leave your information and we&apos;ll reach out to answer any questions about pelvic floor therapy.
+                </p>
+              </div>
+              <form className="lead-form" onSubmit={handleFormSubmit}>
+                {/* Honeypot field for spam protection - hidden from users */}
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name" className="font-spline">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="Your full name"
+                      className="font-spline"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email" className="font-spline">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="your@email.com"
+                      className="font-spline"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="phone" className="font-spline">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="(555) 555-5555"
+                      className="font-spline"
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message" className="font-spline">Message (optional)</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Tell us about your situation..."
+                    className="font-spline"
+                    rows={2}
+                  />
+                </div>
+                <button 
+                  type="submit" 
+                  className="button dark submit-button"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Get In Touch"}
+                </button>
+                {formStatus.message && (
+                  <p className={`form-message ${formStatus.type} font-spline`}>
+                    {formStatus.message}
+                  </p>
+                )}
+              </form>
+            </div>
+          </div>
+        </section>
 
         <section className="section approach-section">
           <div className="wrapper">
@@ -307,106 +389,22 @@ export default function PelvicFloor() {
           </div>
         </section>
 
-        {/* COMBINED CTA + LEAD FORM - One conversion section */}
-        <section className="section conversion-section">
+        <section className="section cta-section">
           <div className="wrapper">
-            <div className="conversion-content">
-              <div className="conversion-header">
-                <h2 className="h2 uppercase">Ready to Get Started?</h2>
-                <p className="description font-spline">
-                  Feel supported. Feel strong. Feel like yourself again. Whether you&apos;re recovering from injury or seeking better performance and comfort, our integrated approach helps you reconnect with your body in a powerful, sustainable way.
-                </p>
-              </div>
-              
-              <div className="conversion-options">
-                <div className="option book-option">
-                  <h3 className="h3 uppercase">Book Now</h3>
-                  <p className="font-spline">Ready to take the next step? Schedule your assessment with Dr. Beau today.</p>
-                  <a
-                    href={PELVIC_FLOOR_BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button dark"
-                    onClick={handleBookAssessmentClick}
-                  >
-                    Book Your Assessment
-                  </a>
-                </div>
-
-                <div className="option-divider">
-                  <span>OR</span>
-                </div>
-
-                <div className="option form-option">
-                  <h3 className="h3 uppercase">Have Questions?</h3>
-                  <p className="font-spline">Not ready to book yet? Leave your info and we&apos;ll reach out.</p>
-                  <form className="lead-form" onSubmit={handleFormSubmit}>
-                    {/* Honeypot field for spam protection - hidden from users */}
-                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
-                    <div className="form-row">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          placeholder="Your name"
-                          className="font-spline"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          placeholder="Email"
-                          className="font-spline"
-                        />
-                      </div>
-                      <div className="form-group">
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          required
-                          placeholder="Phone"
-                          className="font-spline"
-                        />
-                      </div>
-                    </div>
-                    <div className="form-group message-group">
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Message (optional)"
-                        className="font-spline"
-                        rows={3}
-                      />
-                    </div>
-                    <button 
-                      type="submit" 
-                      className="button dark submit-button"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Sending..." : "Get In Touch"}
-                    </button>
-                    {formStatus.message && (
-                      <p className={`form-message ${formStatus.type} font-spline`}>
-                        {formStatus.message}
-                      </p>
-                    )}
-                  </form>
-                </div>
-              </div>
+            <div className="cta-content">
+              <h2 className="h2 uppercase">Ready to Get Started?</h2>
+              <p className="description font-spline">
+                Feel supported. Feel strong. Feel like yourself again. Whether you&apos;re recovering from injury or seeking better performance and comfort, our integrated approach helps you reconnect with your body in a powerful, sustainable way.
+              </p>
+              <a
+                href={PELVIC_FLOOR_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button dark"
+                onClick={handleBookAssessmentClick}
+              >
+                Book Your Consultation Today
+              </a>
             </div>
           </div>
         </section>
