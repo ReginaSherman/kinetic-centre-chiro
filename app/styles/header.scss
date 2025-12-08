@@ -50,6 +50,7 @@
 
       .list-item {
         padding: 0 35px;
+        position: relative;
 
         a.nav-link {
           text-transform: uppercase;
@@ -69,6 +70,85 @@
 
           &.active {
             font-weight: 600;
+          }
+        }
+
+        &.has-dropdown {
+          .nav-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $white;
+            min-width: 260px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 8px;
+
+            // Bridge element to prevent hover gap
+            &::before {
+              content: "";
+              position: absolute;
+              top: -12px;
+              left: 0;
+              right: 0;
+              height: 12px;
+              background: transparent;
+            }
+
+            a {
+              display: block;
+              padding: 14px 24px;
+              text-decoration: none;
+              color: $black;
+              font-size: 14px;
+              font-weight: 600;
+              text-transform: uppercase;
+              text-align: center;
+              white-space: nowrap;
+              transition: background-color 0.2s ease, color 0.2s ease;
+
+              &:hover {
+                background-color: $gray;
+                color: $green;
+              }
+            }
+          }
+
+          &:hover .nav-dropdown {
+            display: block;
+          }
+
+          @include devices(tablet) {
+            .nav-dropdown {
+              position: static;
+              transform: none;
+              box-shadow: none;
+              border-radius: 0;
+              margin-top: 10px;
+              padding: 0;
+              min-width: auto;
+
+              &::before {
+                display: none;
+              }
+
+              a {
+                padding: 12px 15px;
+                font-size: 14px;
+                background-color: $gray;
+                border-radius: 4px;
+                margin: 5px 0;
+                white-space: normal;
+              }
+            }
+
+            &:hover .nav-dropdown {
+              display: block;
+            }
           }
         }
       }
