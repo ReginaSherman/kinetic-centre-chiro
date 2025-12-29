@@ -21,6 +21,10 @@ import evan from "public/DrEvan.JPG";
 import hunter from "public/DrHunter.JPG";
 import sonia from "public/sonia-headshot.png";
 import grant from "public/grant-headshot.jpeg";
+import mcbride from "public/McBride-headshot.jpeg";
+import sweet from "public/Sweet-headshot.jpeg";
+import lopez from "public/Lopez-headshot.jpeg";
+import tammy from "public/Phillips-headshot.jpeg";
 
 const testimonials = [
   {
@@ -201,6 +205,20 @@ export default function About() {
                   teamMemberName="brittany gibson"
                   teamMemberAbout="Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. "
                 />
+                <TeamMember
+                  image={mcbride}
+                  alt="Doctor Matthew McBride"
+                  teamMemberRole="Practitioner"
+                  teamMemberName="Dr. Matthew McBride"
+                  teamMemberAbout="Dr. McBride uses his understanding of anatomy and biomechanics to help patients restore proper, pain-free function to the body so that they can continue, or return to, the activities they love. He utilizes a combination of myofascial release, chiropractic adjustments, and therapeutic exercises to provide a well rounded approach to recovery."
+                />
+                <TeamMember
+                  image={tammy}
+                  alt="Tammy Phillips"
+                  teamMemberRole="Office Manager"
+                  teamMemberName="Tammy Phillips"
+                  teamMemberAbout="Tammy ensures the Dallas clinic runs smoothly, providing exceptional patient care and support from the moment you walk through the door."
+                />
               </div>
             </div>
             <div className="frisco-team">
@@ -227,6 +245,20 @@ export default function About() {
                   teamMemberRole="sports massage therapist"
                   teamMemberName="brittany gibson"
                   teamMemberAbout="Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. "
+                />
+                <TeamMember
+                  image={sweet}
+                  alt="Doctor Matthew Sweet"
+                  teamMemberRole="Practitioner"
+                  teamMemberName="Dr. Matthew Sweet"
+                  teamMemberAbout="Dr. Sweet served 6 years in the United States Coast Guard before attending the University of North Texas where he graduated with his Bachelor of Science in Kinesiology. He obtained his doctorate of chiropractic in order to pursue his passion of helping active individuals recover from injuries."
+                />
+                <TeamMember
+                  image={lopez}
+                  alt="Sean Lopez"
+                  teamMemberRole="Licensed Massage Therapist"
+                  teamMemberName="Sean Lopez LMT"
+                  teamMemberAbout="Licensed Massage Instructor specializing in postural correction, sports recovery, and rehabilitation. Sean is passionate about helping clients understand their bodies—how they move, function, and heal—through education and hands-on care."
                 />
               </div>
             </div>
