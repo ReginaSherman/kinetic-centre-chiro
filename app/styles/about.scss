@@ -66,6 +66,28 @@
     }
   }
 
+  .denver-team {
+    .container {
+      flex: 0 1 50%;
+
+      @include devices(tablet) {
+        flex: 0 1 60%;
+      }
+
+      @include devices(mobile) {
+        flex: 0 1 100%;
+      }
+
+      .image-container {
+        margin-top: -15%;
+      }
+
+      .text-container {
+        margin-top: 15%;
+      }
+    }
+  }
+
   .row {
     display: flex;
     justify-content: center;

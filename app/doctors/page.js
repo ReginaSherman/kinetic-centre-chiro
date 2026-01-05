@@ -19,18 +19,22 @@ import brittany from "public/BrittanyPhoto.png";
 import tyler from "public/tyler.png"
 import play from "public/play-button.png";
 import grant from "public/grant-full.png"
-import sonia from "public/sonia-full.png"
+import mcbride from "public/McBride-fullbody.png"
+import sweet from "public/Sweet-fullbody.png"
+import lopez from "public/Lopez-fullbody.png"
+import evan from "public/Hall-fullbody.png"
 import { trackBookNowClick } from "../utils/analytics";
 
 
 const doctorsData = [
+  // DALLAS TEAM
   {
     name: "Dr. Beau Sauls",
     title: "CEO of Kinetic Centres & Practitioner",
     description:
       "Dr. Sauls is the leading Kinetisense expert in the US and specializes in the Kinetisense Advanced Movement Screening and treatments/rehab to help improve areas of dysfunction.",
     bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/1",
-    videoSrc: "https://www.youtube.com/watch?v=pPr8_pLSyuM", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=pPr8_pLSyuM",
     imageSrc: beau,
     instagram: "https://www.instagram.com/the3ddoc/",
     facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
@@ -42,11 +46,39 @@ const doctorsData = [
       "With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work.",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book#/staff_member/2",
-    videoSrc: "https://www.youtube.com/watch?v=d0nLzMhNR-s", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=d0nLzMhNR-s",
     imageSrc: brennan,
     instagram: "https://www.instagram.com/3dbarbelldoc/",
     facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
   },
+  {
+    name: "Dr. Evan Hall",
+    title: "Practitioner",
+    description:
+      "Evan Hall, an accomplished triathlete and runner utilizes his background and passions to cater to patient care. He uses a strong emphasis on soft tissue work and dry needling with e-stim when treating patients.",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book",
+    imageSrc: evan,
+  },
+  {
+    name: "Dr. Matthew McBride",
+    title: "Practitioner",
+    description:
+      "Dr. McBride uses his understanding of anatomy and biomechanics to help patients restore proper, pain-free function to the body so that they can continue, or return to, the activities they love. He utilizes a combination of myofascial release, chiropractic adjustments, and therapeutic exercises to provide a well rounded approach to recovery.",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book",
+    imageSrc: mcbride,
+  },
+  {
+    name: "Brittany Gibson",
+    title: "Sports Massage Therapist",
+    description:
+      "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being.",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/19",
+    videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA",
+    imageSrc: brittany,
+    instagram: "https://www.instagram.com/3dmt_brittany/",
+    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
+  },
+  // FRISCO TEAM
   {
     name: "Dr. Matt Ortega",
     title: "Clinic Director & Practitioner",
@@ -54,7 +86,7 @@ const doctorsData = [
       "With the knowledge from chiropractic school and years of experience from strength training. His passion is helping patients overcome the obstacles necessary to perform well in life, sports, or work.",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/11",
-    videoSrc: "https://www.youtube.com/watch?v=ynGMtXHmNj4", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=ynGMtXHmNj4",
     imageSrc: matt,
     instagram: "https://www.instagram.com/3dswingdoc/",
     facebook: "https://www.facebook.com/KineticCentreFrisco?mibextid=hu50Ix",
@@ -66,40 +98,36 @@ const doctorsData = [
       "Dr. Kristina Myles, a Certified Chiropractic Sports Practitioner®, excels in resolving injuries through soft tissue techniques and dry needling with an extensive athletic background.",
     bookLink:
       "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/15",
-    videoSrc: "https://www.youtube.com/watch?v=Wl42naYXv_o", // Replace with the actual video source
+    videoSrc: "https://www.youtube.com/watch?v=Wl42naYXv_o",
     imageSrc: kristina,
     instagram: "https://www.instagram.com/3dsportsdoc/",
     facebook: "https://www.facebook.com/KineticCentreFrisco?mibextid=hu50Ix",
   },
   {
-    name: "Brittany gibson",
-    title: "sports massage therapist",
-    description:
-      "Brittany Gibson, available at both Kinetic Centre Locations, specializes in athletic recovery. With her expertise in athlete-tailored massage techniques, she empowers individuals to reach their peak physical well-being. ",
-    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book#/staff_member/19",
-    videoSrc: "https://www.youtube.com/watch?v=FtdOqk4XfKA", // Replace with the actual video source
-    imageSrc: brittany,
-    instagram: "https://www.instagram.com/3dmt_brittany/",
-    facebook: "https://www.facebook.com/KineticCentreDallas?mibextid=hu50Ix",
-  },
-  {
-    name: "Dr. Sonia Garcia",
+    name: "Dr. Matthew Sweet",
     title: "Practitioner",
     description:
-      "Dr. Sonia Garcia is a skilled chiropractor at Kinetic Centre Denver, with a passion for helping patients achieve optimal movement and wellness.",
-      bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/3",
-      imageSrc: sonia,
-
+      "Dr. Sweet served 6 years in the United States Coast Guard before attending the University of North Texas where he graduated with his Bachelor of Science in Kinesiology. He obtained his doctorate of chiropractic in order to pursue his passion of helping active individuals recover from injuries.",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book",
+    imageSrc: sweet,
   },
+  {
+    name: "Sean Lopez LMT",
+    title: "Licensed Massage Therapist",
+    description:
+      "Licensed Massage Instructor specializing in postural correction, sports recovery, and rehabilitation. Sean is passionate about helping clients understand their bodies—how they move, function, and heal—through education and hands-on care.",
+    bookLink: "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-frisco/book",
+    imageSrc: lopez,
+  },
+  // DENVER TEAM
   {
     name: "Dr. Grant Smith",
     title: "Practitioner",
     description:
       "Dr. Grant Smith is a Colorado chiropractor specializing in functional movement, soft tissue work, and sports rehab. With degrees from CU and Parker University, he blends biomechanics and chiropractic care to treat the root cause of pain and improve performance.",
-      bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/1",
+    bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/1",
     imageSrc: grant,
-    },
-  
+  },
 ];
 
 export default function Doctors() {
