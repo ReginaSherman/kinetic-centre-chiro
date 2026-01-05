@@ -19,7 +19,6 @@ import brittany from "public/BrittanyPhoto.png";
 import tyler from "public/tyler.png"
 import play from "public/play-button.png";
 import grant from "public/grant-full.png"
-import sonia from "public/sonia-full.png"
 import mcbride from "public/McBride-fullbody.png"
 import sweet from "public/Sweet-fullbody.png"
 import lopez from "public/Lopez-fullbody.png"
@@ -128,14 +127,6 @@ const doctorsData = [
       "Dr. Grant Smith is a Colorado chiropractor specializing in functional movement, soft tissue work, and sports rehab. With degrees from CU and Parker University, he blends biomechanics and chiropractic care to treat the root cause of pain and improve performance.",
     bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/1",
     imageSrc: grant,
-  },
-  {
-    name: "Dr. Sonia Garcia",
-    title: "Practitioner",
-    description:
-      "Dr. Sonia Garcia is a skilled chiropractor at Kinetic Centre Denver, with a passion for helping patients achieve optimal movement and wellness.",
-    bookLink: "https://kineticcentreusa.janeapp.com/#/staff_member/3",
-    imageSrc: sonia,
   },
 ];
 

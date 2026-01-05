@@ -19,7 +19,6 @@ import matt from "public/matt-headshot.png";
 import kristina from "public/kristina-headshot.png";
 import evan from "public/DrEvan.JPG";
 import hunter from "public/DrHunter.JPG";
-import sonia from "public/sonia-headshot.png";
 import grant from "public/grant-headshot.jpeg";
 import mcbride from "public/McBride-headshot.jpeg";
 import sweet from "public/Sweet-headshot.jpeg";
@@ -279,13 +278,6 @@ In addition to his formal education, Dr. Smith is one of 15 people in the world 
 "I see a large gap in our healthcare system, where the patient rarely gets to experience the 'win' for themselves," Dr. Smith explains. "This is the gap that I operate in. I strive to empower every single one of my patients with the knowledge and tools they need to confidently self-manage some of their own symptoms."
 
 While not in the clinic, Dr. Smith leads an active lifestyle filled with golf, lacrosse, hiking, basketball, strength training, and football. He enjoys spending quality time on the beach and at the family lake house in Michigan.`}
-                />
-                <TeamMember
-                  image={sonia}
-                  alt="Doctor Sonia"
-                  teamMemberRole="Practitioner"
-                  teamMemberName="dR. sonia Garcia"
-                  teamMemberAbout="Dr. Sonia Garcia is a skilled chiropractor at Kinetic Centre Denver, with a passion for helping patients achieve optimal movement and wellness. Holding a Master's in Sports Medicine alongside her Doctor of Chiropractic degree, she blends advanced knowledge and expertise to assess and treat a wide range of musculoskeletal conditions. Dr. Garcia addresses the root causes of discomfort by utilizing functional movement technology to analyze and understand her patients' movements. With a personal background in injury rehabilitation, she specializes in both injury prevention and recovery, guiding her patients toward lasting health and performance improvements."
                 />
               </div>
             </div>
