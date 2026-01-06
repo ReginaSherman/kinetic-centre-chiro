@@ -11,19 +11,17 @@ import "../styles/about.scss";
 import { trackBookAppointmentClick } from "../utils/analytics";
 
 
-import dr from "public/images/PHOTO_1.jpg";
-import beau from "public/beau-headshot.webp";
-import brennan from "public/brennan-headshot.png";
-import brittany from "public/Brittany-headshot.png";
-import matt from "public/matt-headshot.png";
-import kristina from "public/kristina-headshot.png";
-import evan from "public/DrEvan.JPG";
-import hunter from "public/DrHunter.JPG";
+import beau from "public/headshots/Beau-headshot-2.jpeg";
+import brennan from "public/headshots/Riche-headshot-2.jpeg";
+import brittany from "public/headshots/Gibson-headshot-bg.jpeg";
+import matt from "public/headshots/Ortega-headshot-white.jpeg";
+import kristina from "public/headshots/Myles-headshot-white.jpeg";
+import evan from "public/headshots/Hall-headshot-white.jpeg";
 import grant from "public/grant-headshot.jpeg";
-import mcbride from "public/McBride-headshot.jpeg";
-import sweet from "public/Sweet-headshot.jpeg";
-import lopez from "public/Lopez-headshot.jpeg";
-import tammy from "public/Phillips-headshot.jpeg";
+import mcbride from "public/headshots/McBride-headshot.jpeg";
+import sweet from "public/headshots/Sweet-headshot.jpeg";
+import lopez from "public/headshots/Lopez-headshot.jpeg";
+import tammy from "public/headshots/Phillips-headshot.jpeg";
 
 const testimonials = [
   {

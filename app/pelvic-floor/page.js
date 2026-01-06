@@ -7,7 +7,7 @@ import Image from "next/image";
 import "../styles/pelvic-floor.scss";
 import { trackBookAppointmentClick } from "../utils/analytics";
 
-import beau from "public/beau-headshot.webp";
+import beau from "public/headshots/Beau-headshot-2.jpeg";
 
 const PELVIC_FLOOR_BOOKING_URL = "https://kineticcentredallas.janeapp.com/locations/kinetic-centre-dallas/book/#/staff_member/1";
 

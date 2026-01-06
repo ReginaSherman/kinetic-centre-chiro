@@ -11,18 +11,17 @@ import BookingModal from "../components/BookingModal";
 
 import Image from "next/image";
 
-import beau from "public/beau-min.png";
-import brennan from "public/brennan.png";
+import beau from "public/full-body/Beau-fullbody.png";
+import brennan from "public/full-body/Riche-fullbody.png";
 import matt from "public/matt.png";
-import kristina from "public/Dr.Myles.png";
-import brittany from "public/BrittanyPhoto.png";
-import tyler from "public/tyler.png"
+import kristina from "public/full-body/Myles-fullbody.png";
+import brittany from "public/full-body/Gibson-fullbody.png";
 import play from "public/play-button.png";
 import grant from "public/grant-full.png"
-import mcbride from "public/McBride-fullbody.png"
-import sweet from "public/Sweet-fullbody.png"
-import lopez from "public/Lopez-fullbody.png"
-import evan from "public/Hall-fullbody.png"
+import mcbride from "public/full-body/McBride-fullbody.png"
+import sweet from "public/full-body/Sweet-fullbody.png"
+import lopez from "public/full-body/Lopez-fullbody.png"
+import evan from "public/full-body/Hall-fullbody.png"
 import { trackBookNowClick } from "../utils/analytics";
 
 

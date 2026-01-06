@@ -70,7 +70,7 @@
 
         .image-container {
           position: relative;
-          top: -110px;
+          bottom: 0;
           width: 270px;
           height: 100%;
 
@@ -86,13 +86,14 @@
 
           img {
             position: absolute;
-            height: 121%;
+            height: 100%;
             width: 100%;
             object-fit: cover;
             object-position: top;
             max-width: none;
             z-index: 2;
             margin-left: 15px;
+            bottom: 0;
 
             // @include devices(tablet) {
             //   height: 100%;
