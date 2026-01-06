@@ -17,7 +17,7 @@ import brittany from "public/headshots/Gibson-headshot-bg.jpeg";
 import matt from "public/headshots/Ortega-headshot-white.jpeg";
 import kristina from "public/headshots/Myles-headshot-white.jpeg";
 import evan from "public/headshots/Hall-headshot-white.jpeg";
-import grant from "public/grant-headshot.jpeg";
+import grant from "public/headshots/Smith-headshot.jpeg";
 import mcbride from "public/headshots/McBride-headshot.jpeg";
 import sweet from "public/headshots/Sweet-headshot.jpeg";
 import lopez from "public/headshots/Lopez-headshot.jpeg";

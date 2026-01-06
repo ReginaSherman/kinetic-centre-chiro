@@ -17,7 +17,7 @@ import matt from "public/matt.png";
 import kristina from "public/full-body/Myles-fullbody.png";
 import brittany from "public/full-body/Gibson-fullbody.png";
 import play from "public/play-button.png";
-import grant from "public/grant-full.png"
+import grant from "public/full-body/Smith-fullbody.png"
 import mcbride from "public/full-body/McBride-fullbody.png"
 import sweet from "public/full-body/Sweet-fullbody.png"
 import lopez from "public/full-body/Lopez-fullbody.png"
